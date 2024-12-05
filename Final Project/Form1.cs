@@ -35,7 +35,8 @@ namespace Final_Project
             }
             else
             {
-                string usertype = string.Empty;
+                //attributes
+                string usertype;
 
                 //connection string
                 string cs = @"Data Source=HPNotebook; Initial Catalog=DSE_FinalProject; Integrated Security=True";
