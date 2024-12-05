@@ -21,9 +21,6 @@ namespace Final_Project
         private void Admin_view_Product_inventory_Load(object sender, EventArgs e)
         {
             {
-                txtproduct.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                txtproduct.AutoCompleteSource = AutoCompleteSource.CustomSource;
-
                 //connection
                 string cs = @"Data Source=HPNotebook; 
                         Initial Catalog=DSE_FinalProject; 
@@ -75,9 +72,6 @@ namespace Final_Project
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            txtproduct.AutoCompleteMode = AutoCompleteMode.SuggestAppend; 
-            txtproduct.AutoCompleteSource = AutoCompleteSource.CustomSource;
-
             //connection
             string cs = @"Data Source=HPNotebook; 
                         Initial Catalog=DSE_FinalProject; 
