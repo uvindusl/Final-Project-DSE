@@ -60,6 +60,12 @@
     <Compile Include="SP View Software Pd.Designer.cs">
       <DependentUpon>SP View Software Pd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Technician View Hardware Product.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Technician View Hardware Product.Designer.cs">
+      <DependentUpon>Technician View Hardware Product.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -75,6 +81,9 @@
     </Compile>
     <EmbeddedResource Include="SP View Software Pd.resx">
       <DependentUpon>SP View Software Pd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Technician View Hardware Product.resx">
+      <DependentUpon>Technician View Hardware Product.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
