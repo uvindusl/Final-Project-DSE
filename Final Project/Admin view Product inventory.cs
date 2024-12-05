@@ -20,27 +20,32 @@ namespace Final_Project
 
         private void Admin_view_Product_inventory_Load(object sender, EventArgs e)
         {
-            //connection
-            string cs = @"Data Source=HPNotebook; 
+            {
+                txtproduct.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                txtproduct.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+                //connection
+                string cs = @"Data Source=HPNotebook; 
                         Initial Catalog=DSE_FinalProject; 
                         Integrated Security=True";
-            SqlConnection con = new SqlConnection(cs);
-            con.Open();
+                SqlConnection con = new SqlConnection(cs);
+                con.Open();
 
-            //commands
-            string sql = "SELECT *From InventoryProducts";
-            SqlCommand com = new SqlCommand(sql, con);
+                //commands
+                string sql = "SELECT *From InventoryProducts";
+                SqlCommand com = new SqlCommand(sql, con);
 
-            //access data using data adapter method
-            SqlDataAdapter dap = new SqlDataAdapter(com);
-            DataSet ds = new DataSet();
-            dap.Fill(ds);
+                //access data using data adapter method
+                SqlDataAdapter dap = new SqlDataAdapter(com);
+                DataSet ds = new DataSet();
+                dap.Fill(ds);
 
-            //blind data with controls
-            this.dataGridView1.DataSource = ds.Tables[0];
+                //blind data with controls
+                this.dataGridView1.DataSource = ds.Tables[0];
 
-            //disconnect
-            con.Close();
+                //disconnect
+                con.Close();
+            }
         }
 
         private void btnsearch_Click(object sender, EventArgs e)
@@ -70,6 +75,9 @@ namespace Final_Project
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            txtproduct.AutoCompleteMode = AutoCompleteMode.SuggestAppend; 
+            txtproduct.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
             //connection
             string cs = @"Data Source=HPNotebook; 
                         Initial Catalog=DSE_FinalProject; 
