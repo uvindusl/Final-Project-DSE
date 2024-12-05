@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin view Product inventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin view Product inventory.Designer.cs">
+      <DependentUpon>Admin view Product inventory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,9 @@
     <Compile Include="Technician View Hardware Product.Designer.cs">
       <DependentUpon>Technician View Hardware Product.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Admin view Product inventory.resx">
+      <DependentUpon>Admin view Product inventory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
