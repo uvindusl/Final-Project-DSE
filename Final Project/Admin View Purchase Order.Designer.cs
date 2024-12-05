@@ -41,19 +41,23 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.combopoid = new System.Windows.Forms.ComboBox();
+            this.txttotalamount = new System.Windows.Forms.TextBox();
+            this.txtdateandtime = new System.Windows.Forms.TextBox();
+            this.txtquantity = new System.Windows.Forms.TextBox();
+            this.txtsupplierid = new System.Windows.Forms.TextBox();
+            this.txtitem = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtadminid = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtdiscount = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -62,7 +66,7 @@
             // 
             // btnprint
             // 
-            this.btnprint.Location = new System.Drawing.Point(373, 291);
+            this.btnprint.Location = new System.Drawing.Point(413, 341);
             this.btnprint.Name = "btnprint";
             this.btnprint.Size = new System.Drawing.Size(75, 23);
             this.btnprint.TabIndex = 17;
@@ -73,9 +77,9 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(400, 444);
+            this.dataGridView1.Location = new System.Drawing.Point(328, 463);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(663, 193);
+            this.dataGridView1.Size = new System.Drawing.Size(828, 206);
             this.dataGridView1.TabIndex = 12;
             // 
             // panel1
@@ -200,12 +204,16 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.panel3.Controls.Add(this.comboBox1);
-            this.panel3.Controls.Add(this.textBox6);
-            this.panel3.Controls.Add(this.textBox5);
-            this.panel3.Controls.Add(this.textBox4);
-            this.panel3.Controls.Add(this.textBox3);
-            this.panel3.Controls.Add(this.textBox2);
+            this.panel3.Controls.Add(this.txtdiscount);
+            this.panel3.Controls.Add(this.label16);
+            this.panel3.Controls.Add(this.txtadminid);
+            this.panel3.Controls.Add(this.label15);
+            this.panel3.Controls.Add(this.combopoid);
+            this.panel3.Controls.Add(this.txttotalamount);
+            this.panel3.Controls.Add(this.txtdateandtime);
+            this.panel3.Controls.Add(this.txtquantity);
+            this.panel3.Controls.Add(this.txtsupplierid);
+            this.panel3.Controls.Add(this.txtitem);
             this.panel3.Controls.Add(this.label14);
             this.panel3.Controls.Add(this.label13);
             this.panel3.Controls.Add(this.label12);
@@ -215,8 +223,111 @@
             this.panel3.Controls.Add(this.btnprint);
             this.panel3.Location = new System.Drawing.Point(466, 80);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(535, 341);
+            this.panel3.Size = new System.Drawing.Size(535, 377);
             this.panel3.TabIndex = 18;
+            // 
+            // combopoid
+            // 
+            this.combopoid.FormattingEnabled = true;
+            this.combopoid.Location = new System.Drawing.Point(248, 52);
+            this.combopoid.Name = "combopoid";
+            this.combopoid.Size = new System.Drawing.Size(188, 21);
+            this.combopoid.TabIndex = 31;
+            this.combopoid.SelectedIndexChanged += new System.EventHandler(this.comboinvoiceid_SelectedIndexChanged);
+            // 
+            // txttotalamount
+            // 
+            this.txttotalamount.Location = new System.Drawing.Point(248, 265);
+            this.txttotalamount.Name = "txttotalamount";
+            this.txttotalamount.ReadOnly = true;
+            this.txttotalamount.Size = new System.Drawing.Size(188, 20);
+            this.txttotalamount.TabIndex = 30;
+            // 
+            // txtdateandtime
+            // 
+            this.txtdateandtime.Location = new System.Drawing.Point(248, 158);
+            this.txtdateandtime.Name = "txtdateandtime";
+            this.txtdateandtime.ReadOnly = true;
+            this.txtdateandtime.Size = new System.Drawing.Size(188, 20);
+            this.txtdateandtime.TabIndex = 29;
+            // 
+            // txtquantity
+            // 
+            this.txtquantity.Location = new System.Drawing.Point(248, 119);
+            this.txtquantity.Name = "txtquantity";
+            this.txtquantity.ReadOnly = true;
+            this.txtquantity.Size = new System.Drawing.Size(188, 20);
+            this.txtquantity.TabIndex = 28;
+            // 
+            // txtsupplierid
+            // 
+            this.txtsupplierid.Location = new System.Drawing.Point(248, 230);
+            this.txtsupplierid.Name = "txtsupplierid";
+            this.txtsupplierid.ReadOnly = true;
+            this.txtsupplierid.Size = new System.Drawing.Size(188, 20);
+            this.txtsupplierid.TabIndex = 27;
+            // 
+            // txtitem
+            // 
+            this.txtitem.Location = new System.Drawing.Point(248, 82);
+            this.txtitem.Name = "txtitem";
+            this.txtitem.ReadOnly = true;
+            this.txtitem.Size = new System.Drawing.Size(188, 20);
+            this.txtitem.TabIndex = 26;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(76, 268);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(70, 13);
+            this.label14.TabIndex = 23;
+            this.label14.Text = "Total Amount";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(76, 161);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(78, 13);
+            this.label13.TabIndex = 22;
+            this.label13.Text = "Date And Time";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(76, 122);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(46, 13);
+            this.label12.TabIndex = 21;
+            this.label12.Text = "Quantity";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(76, 233);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(59, 13);
+            this.label11.TabIndex = 20;
+            this.label11.Text = "Supplier ID";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(76, 85);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(27, 13);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "Item";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(76, 55);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(95, 13);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "Purchase Order ID";
             // 
             // label8
             // 
@@ -228,115 +339,53 @@
             this.label8.TabIndex = 19;
             this.label8.Text = "View Purchase Order";
             // 
-            // label9
+            // txtadminid
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(76, 55);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(56, 13);
-            this.label9.TabIndex = 18;
-            this.label9.Text = "Invoice ID";
+            this.txtadminid.Location = new System.Drawing.Point(248, 196);
+            this.txtadminid.Name = "txtadminid";
+            this.txtadminid.ReadOnly = true;
+            this.txtadminid.Size = new System.Drawing.Size(188, 20);
+            this.txtadminid.TabIndex = 33;
             // 
-            // label10
+            // label15
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(76, 93);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(44, 13);
-            this.label10.TabIndex = 19;
-            this.label10.Text = "Product";
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(76, 199);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(50, 13);
+            this.label15.TabIndex = 32;
+            this.label15.Text = "Admin ID";
             // 
-            // label11
+            // txtdiscount
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(76, 129);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(45, 13);
-            this.label11.TabIndex = 20;
-            this.label11.Text = "Supplier";
+            this.txtdiscount.Location = new System.Drawing.Point(248, 304);
+            this.txtdiscount.Name = "txtdiscount";
+            this.txtdiscount.ReadOnly = true;
+            this.txtdiscount.Size = new System.Drawing.Size(188, 20);
+            this.txtdiscount.TabIndex = 35;
             // 
-            // label12
+            // label16
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(76, 167);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(46, 13);
-            this.label12.TabIndex = 21;
-            this.label12.Text = "Quantity";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(76, 206);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(53, 13);
-            this.label13.TabIndex = 22;
-            this.label13.Text = "Unit Price";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(76, 242);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(31, 13);
-            this.label14.TabIndex = 23;
-            this.label14.Text = "Total";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(248, 90);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(188, 20);
-            this.textBox2.TabIndex = 26;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(248, 126);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(188, 20);
-            this.textBox3.TabIndex = 27;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(248, 164);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(188, 20);
-            this.textBox4.TabIndex = 28;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(248, 203);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(188, 20);
-            this.textBox5.TabIndex = 29;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(248, 239);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(188, 20);
-            this.textBox6.TabIndex = 30;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(248, 52);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(188, 21);
-            this.comboBox1.TabIndex = 31;
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(76, 307);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(76, 13);
+            this.label16.TabIndex = 34;
+            this.label16.Text = "Total Discount";
             // 
             // Admin_View_Purchase_Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1190, 649);
+            this.ClientSize = new System.Drawing.Size(1190, 681);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Name = "Admin_View_Purchase_Order";
             this.Text = "Admin View Purchase Order";
+            this.Load += new System.EventHandler(this.Admin_View_Purchase_Order_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -369,12 +418,16 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txttotalamount;
+        private System.Windows.Forms.TextBox txtdateandtime;
+        private System.Windows.Forms.TextBox txtquantity;
+        private System.Windows.Forms.TextBox txtsupplierid;
+        private System.Windows.Forms.TextBox txtitem;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox combopoid;
+        private System.Windows.Forms.TextBox txtadminid;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txtdiscount;
+        private System.Windows.Forms.Label label16;
     }
 }
