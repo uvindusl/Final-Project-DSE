@@ -39,7 +39,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.combopoid = new System.Windows.Forms.ComboBox();
             this.txttotalamount = new System.Windows.Forms.TextBox();
@@ -58,10 +57,11 @@
             this.label15 = new System.Windows.Forms.Label();
             this.txtdiscount = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnprint
@@ -191,16 +191,6 @@
             this.panel2.Size = new System.Drawing.Size(253, 10);
             this.panel2.TabIndex = 1;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::Final_Project.Properties.Resources.WhatsApp_Image_2024_11_07_at_09_30_23_20f03f32_1;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(39, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(205, 86);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
@@ -316,9 +306,9 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(76, 85);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(27, 13);
+            this.label10.Size = new System.Drawing.Size(44, 13);
             this.label10.TabIndex = 19;
-            this.label10.Text = "Item";
+            this.label10.Text = "Product";
             // 
             // label9
             // 
@@ -373,6 +363,16 @@
             this.label16.TabIndex = 34;
             this.label16.Text = "Total Discount";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Final_Project.Properties.Resources.WhatsApp_Image_2024_11_07_at_09_30_23_20f03f32_1;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(39, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(205, 86);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // Admin_View_Purchase_Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -389,9 +389,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
