@@ -19,6 +19,180 @@ namespace Final_Project
             InitializeComponent();
         }
 
+        private void ProductIdAutoIncrement()
+        {
+            //Id auto incriment
+            try
+            {
+                //Create a connection
+
+                string cs = "Data Source = LAPTOP-DOH91PI2;Initial Catalog = DSE_FinalProject; Integrated Security = True ";
+                SqlConnection con = new SqlConnection(cs);
+
+                con.Open();
+
+                string sql1 = "SELECT MAX(productId) FROM Product";
+                SqlCommand cmd = new SqlCommand(sql1, con);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    // Extract and increment the numeric part of the ItemId
+                    string maxItemId = dr[0].ToString();
+
+                    if (!string.IsNullOrEmpty(maxItemId) && maxItemId.StartsWith("P"))
+                    {
+                        // Remove the prefix 'P' and parse the numeric part
+                        string numericPart = maxItemId.Substring(1);
+                        if (int.TryParse(numericPart, out int maxID))
+                        {
+                            // Increment the numeric part
+                            int newID = maxID + 1;
+                            // Format the new ID back to string with 'P' prefix
+                            this.txtId.Text = "P" + newID.ToString();
+                        }
+                        else
+                        {
+                            // Handle the case where the numeric part is not valid
+                            this.txtId.Text = "P1";
+                        }
+                    }
+                    else
+                    {
+                        // Handle the case where there are no records in the table
+                        this.txtId.Text = "P1";
+                    }
+                }
+                else
+                {
+                    // Handle the case where there are no records in the table
+                    this.txtId.Text = "P1";
+                }
+                dr.Close(); // Ensure the data reader is closed
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Something went wrong: " + ex.Message, "Information");
+            }
+        }
+
+        private void HardwareIdAutoIncrement()
+        {
+            try
+            {
+                // Create a connection
+                string cs = "Data Source=LAPTOP-DOH91PI2;Initial Catalog=DSE_FinalProject;Integrated Security=True";
+
+                using (SqlConnection con = new SqlConnection(cs))
+                {
+                    con.Open();
+
+                    string sql1 = "SELECT MAX(hardwareProductId) FROM HardwareProduct";
+                    using (SqlCommand cmd = new SqlCommand(sql1, con))
+                    {
+                        SqlDataReader dr = cmd.ExecuteReader();
+
+                        if (dr.Read())
+                        {
+                            string maxItemId = dr[0]?.ToString(); // Use null-conditional operator to handle null values
+                            Console.WriteLine($"maxItemId: {maxItemId}"); // Debug output
+
+                            if (!string.IsNullOrEmpty(maxItemId) && maxItemId.StartsWith("HP"))
+                            {
+                                // Remove the prefix 'HP' and parse the numeric part
+                                string numericPart = maxItemId.Substring(2);
+                                if (int.TryParse(numericPart, out int maxID))
+                                {
+                                    // Increment the numeric part
+                                    int newID = maxID + 1;
+                                    // Format the new ID back to string with 'HP' prefix
+                                    this.txtHId.Text = "HP" + newID.ToString();
+                                }
+                                else
+                                {
+                                    // Handle the case where the numeric part is not valid
+                                    this.txtHId.Text = "HP1";
+                                }
+                            }
+                            else
+                            {
+                                // Handle the case where there are no records in the table or invalid format
+                                this.txtHId.Text = "HP1";
+                            }
+                        }
+                        else
+                        {
+                            // Handle the case where there are no records in the table
+                            this.txtHId.Text = "HP1";
+                        }
+                        dr.Close(); // Ensure the data reader is closed
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Something went wrong: " + ex.Message, "Information");
+            }
+        }
+
+        private void SoftwareIdAutoIncrement()
+        {
+            try
+            {
+                // Create a connection
+                string cs = "Data Source=LAPTOP-DOH91PI2;Initial Catalog=DSE_FinalProject;Integrated Security=True";
+
+                using (SqlConnection con = new SqlConnection(cs))
+                {
+                    con.Open();
+
+                    string sql1 = "SELECT MAX(softwareProductId) FROM SoftwareProduct";
+                    using (SqlCommand cmd = new SqlCommand(sql1, con))
+                    {
+                        SqlDataReader dr = cmd.ExecuteReader();
+
+                        if (dr.Read())
+                        {
+                            string maxItemId = dr[0]?.ToString(); // Use null-conditional operator to handle null values
+
+                            if (!string.IsNullOrEmpty(maxItemId) && maxItemId.StartsWith("SP"))
+                            {
+                                // Remove the prefix 'SP' and parse the numeric part
+                                string numericPart = maxItemId.Substring(2);
+                                if (int.TryParse(numericPart, out int maxID))
+                                {
+                                    // Increment the numeric part
+                                    int newID = maxID + 1;
+                                    // Format the new ID back to string with 'SP' prefix
+                                    this.txtSId.Text = "SP" + newID.ToString();
+                                }
+                                else
+                                {
+                                    // Handle the case where the numeric part is not valid
+                                    this.txtSId.Text = "SP1";
+                                }
+                            }
+                            else
+                            {
+                                // Handle the case where there are no records in the table or invalid format
+                                this.txtSId.Text = "SP1";
+                            }
+                        }
+                        else
+                        {
+                            // Handle the case where there are no records in the table
+                            this.txtSId.Text = "SP1";
+                        }
+                        dr.Close(); // Ensure the data reader is closed
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Something went wrong: " + ex.Message, "Information");
+            }
+        }
         private void Admin_Add_Products_Load(object sender, EventArgs e)
         {
             //disabling  txt boxes
@@ -32,6 +206,11 @@ namespace Final_Project
             this.txtPlatform.Enabled = false;
             this.txtFileSize.Enabled = false;
             this.txtSub.Enabled = false;
+
+            ProductIdAutoIncrement();
+            HardwareIdAutoIncrement();
+            SoftwareIdAutoIncrement();
+
         }
 
         private void rdH_CheckedChanged(object sender, EventArgs e)
@@ -39,7 +218,7 @@ namespace Final_Project
 
             //enabling txt boxes
 
-            this.txtHId.Enabled = true;
+          //  this.txtHId.Enabled = true;
             this.txtSerial.Enabled = true;
             this.txtWarranty.Enabled = true;
 
@@ -58,7 +237,7 @@ namespace Final_Project
         {
             //enabling txt boxes
 
-            this.txtSId.Enabled = true;
+            //this.txtSId.Enabled = true;
             this.txtVersion.Enabled = true;
             this.txtLicense.Enabled = true;
             this.txtPlatform.Enabled = true;
@@ -131,44 +310,7 @@ namespace Final_Project
                     }
                 
                     com.Parameters.AddWithValue("@pPrice", this.txtPrice.Text);
-
-
-                    //Execute the command
-                    //com.ExecuteNonQuery();
-
-                    /*  try   //id auto increament
-                      {
-                            
-                          string sql1 = "SELECT MAX(ItemId) FROM Items";
-                          SqlCommand cmd = new SqlCommand(sql1, con);
-
-                          SqlDataReader dr = cmd.ExecuteReader();
-
-                          if (dr.Read())
-                          {
-                              // Check if the value is convertible to int
-                              if (int.TryParse(dr[0].ToString(), out int maxID))
-                              {
-                                  int newID = maxID + 1;
-                                  this.txtId.Text = newID.ToString();
-                              }
-                              else
-                              {
-                                  // Handle the case where the value is not a valid integer
-                                  this.txtId.Text = "1";
-                              }
-                          }
-                          else
-                          {
-                              // Handle the case where there are no records in the table
-                              this.txtId.Text = "1";
-                          }
-
-                      }
-                      catch (SqlException)
-                      {
-                          MessageBox.Show(" Something went wrong ", "Information");
-                      }*/
+              
 
                     if (rdH.Checked)
                     {
@@ -218,6 +360,7 @@ namespace Final_Project
                             this.txtHId.Text = "";
                             this.txtSerial.Text = "";
                             this.txtWarranty.Text = "";
+
                         }
                        
                     }
@@ -289,12 +432,15 @@ namespace Final_Project
                             this.txtPlatform.Text = "";
                             this.txtFileSize.Text = "";
                             this.txtSub.Text = "";
+
                         }
                     }
                     //Disconnect from the sql server
                     con.Close();
 
-                    
+                    ProductIdAutoIncrement();
+                    HardwareIdAutoIncrement();
+                    SoftwareIdAutoIncrement();
                  }
                  catch (SqlException)
                  {

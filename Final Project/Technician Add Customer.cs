@@ -18,6 +18,64 @@ namespace Final_Project
             InitializeComponent();
         }
 
+        private void idAutoincrement()
+        {
+            //Id auto incriment
+            try
+            {
+                //Create a connection
+
+                string cs = "Data Source = LAPTOP-DOH91PI2;Initial Catalog = DSE_FinalProject; Integrated Security = True ";
+                SqlConnection con = new SqlConnection(cs);
+
+                con.Open();
+
+                string sql1 = "SELECT MAX(cusId) FROM Customer";
+                SqlCommand cmd = new SqlCommand(sql1, con);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    // Extract and increment the numeric part of the ItemId
+                    string maxItemId = dr[0].ToString();
+
+                    if (!string.IsNullOrEmpty(maxItemId) && maxItemId.StartsWith("C"))
+                    {
+                        // Remove the prefix 'C' and parse the numeric part
+                        string numericPart = maxItemId.Substring(1);
+                        if (int.TryParse(numericPart, out int maxID))
+                        {
+                            // Increment the numeric part
+                            int newID = maxID + 1;
+                            // Format the new ID back to string with 'p' prefix
+                            this.txtId.Text = "C" + newID.ToString();
+                        }
+                        else
+                        {
+                            // Handle the case where the numeric part is not valid
+                            this.txtId.Text = "C1";
+                        }
+                    }
+                    else
+                    {
+                        // Handle the case where there are no records in the table
+                        this.txtId.Text = "C1";
+                    }
+                }
+                else
+                {
+                    // Handle the case where there are no records in the table
+                    this.txtId.Text = "C1";
+                }
+                dr.Close(); // Ensure the data reader is closed
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Something went wrong: " + ex.Message, "Information");
+            }
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             //varibles for email validation
@@ -86,41 +144,7 @@ namespace Final_Project
                 MessageBox.Show(" Customer Added Succesfully ", "Information");
 
 
-
-
-                /*  try
-                  {
-
-                      string sql1 = "SELECT MAX(ItemId) FROM Items";
-                      SqlCommand cmd = new SqlCommand(sql1, con);
-
-                      SqlDataReader dr = cmd.ExecuteReader();
-
-                      if (dr.Read())
-                      {
-                          // Check if the value is convertible to int
-                          if (int.TryParse(dr[0].ToString(), out int maxID))
-                          {
-                              int newID = maxID + 1;
-                              this.txtId.Text = newID.ToString();
-                          }
-                          else
-                          {
-                              // Handle the case where the value is not a valid integer
-                              this.txtId.Text = "1";
-                          }
-                      }
-                      else
-                      {
-                          // Handle the case where there are no records in the table
-                          this.txtId.Text = "1";
-                      }
-
-                  }
-                  catch (SqlException)
-                  {
-                      MessageBox.Show(" Something went wrong ", "Information");
-                  }*/
+                idAutoincrement();
 
                 //Disconnect from the sql server
                 con.Close();
@@ -146,6 +170,12 @@ namespace Final_Project
             {
                 e.Handled = true;
             }
+        }
+
+        private void Technician_Add_Customer_Load(object sender, EventArgs e)
+        {
+
+            idAutoincrement();
         }
     }
 }

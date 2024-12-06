@@ -150,6 +150,7 @@
             this.Controls.Add(this.txtName);
             this.Name = "Technician_Add_Customer";
             this.Text = "Technician_Add_Customer";
+            this.Load += new System.EventHandler(this.Technician_Add_Customer_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

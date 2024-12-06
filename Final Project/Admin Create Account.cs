@@ -28,6 +28,122 @@ namespace Final_Project
 
         }
 
+        private void EmpIdAutoIncrement()
+        {
+            //Id auto incriment
+            try
+            {
+                //Create a connection
+
+                string cs = "Data Source = LAPTOP-DOH91PI2;Initial Catalog = DSE_FinalProject; Integrated Security = True ";
+                SqlConnection con = new SqlConnection(cs);
+
+                con.Open();
+
+                string sql1 = "SELECT MAX(empId) FROM Employee";
+                SqlCommand cmd = new SqlCommand(sql1, con);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    // Extract and increment the numeric part of the ItemId
+                    string maxItemId = dr[0].ToString();
+
+                    if (!string.IsNullOrEmpty(maxItemId) && maxItemId.StartsWith("E"))
+                    {
+                        // Remove the prefix 'E' and parse the numeric part
+                        string numericPart = maxItemId.Substring(1);
+                        if (int.TryParse(numericPart, out int maxID))
+                        {
+                            // Increment the numeric part
+                            int newID = maxID + 1;
+                            // Format the new ID back to string with 'E' prefix
+                            this.txtId.Text = "E" + newID.ToString();
+                        }
+                        else
+                        {
+                            // Handle the case where the numeric part is not valid
+                            this.txtId.Text = "E1";
+                        }
+                    }
+                    else
+                    {
+                        // Handle the case where there are no records in the table
+                        this.txtId.Text = "E1";
+                    }
+                }
+                else
+                {
+                    // Handle the case where there are no records in the table
+                    this.txtId.Text = "E1";
+                }
+                dr.Close(); // Ensure the data reader is closed
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Something went wrong: " + ex.Message, "Information");
+            }
+        }
+
+        private void AdminIdAutoIncrement()
+        {
+            //Id auto incriment
+            try
+            {
+                //Create a connection
+
+                string cs = "Data Source = LAPTOP-DOH91PI2;Initial Catalog = DSE_FinalProject; Integrated Security = True ";
+                SqlConnection con = new SqlConnection(cs);
+
+                con.Open();
+
+                string sql1 = "SELECT MAX(adminId) FROM Admin";
+                SqlCommand cmd = new SqlCommand(sql1, con);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    // Extract and increment the numeric part of the ItemId
+                    string maxItemId = dr[0].ToString();
+
+                    if (!string.IsNullOrEmpty(maxItemId) && maxItemId.StartsWith("A"))
+                    {
+                        // Remove the prefix 'A' and parse the numeric part
+                        string numericPart = maxItemId.Substring(1);
+                        if (int.TryParse(numericPart, out int maxID))
+                        {
+                            // Increment the numeric part
+                            int newID = maxID + 1;
+                            // Format the new ID back to string with 'A' prefix
+                            this.txtAid.Text = "A" + newID.ToString();
+                        }
+                        else
+                        {
+                            // Handle the case where the numeric part is not valid
+                            this.txtAid.Text = "A1";
+                        }
+                    }
+                    else
+                    {
+                        // Handle the case where there are no records in the table
+                        this.txtAid.Text = "A1";
+                    }
+                }
+                else
+                {
+                    // Handle the case where there are no records in the table
+                    this.txtAid.Text = "A1";
+                }
+                dr.Close(); // Ensure the data reader is closed
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Something went wrong: " + ex.Message, "Information");
+            }
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             //varibles for email validation
@@ -39,6 +155,7 @@ namespace Final_Project
             //varibles for validate phone number
 
             String no = this.txtNo.Text;
+            String no1 = this.txtEcont.Text;
 
             //checking any empty values
 
@@ -77,6 +194,10 @@ namespace Final_Project
             else if (txtEcont.Text == "")
             {
                 MessageBox.Show("Enter an Emergency contact");
+            }
+            else if (no1.Length != 10) //number should be 10 numbers
+            {
+                MessageBox.Show("Enter a valid Emergency contact");
             }
             else if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= email.Length) //email must be a valid one
             {
@@ -122,7 +243,7 @@ namespace Final_Project
                 com.Parameters.AddWithValue("@city", this.txtCity.Text);
                 com.Parameters.AddWithValue("@empEmargancyCont", this.txtEcont.Text);
                 com.Parameters.AddWithValue("@empPassword", this.txtPassword.Text);
-                com1.Parameters.AddWithValue("@adminId", this.txtUser.Text);
+                com1.Parameters.AddWithValue("@adminId", this.txtAid.Text);
 
 
                 //Execute the command
@@ -131,41 +252,8 @@ namespace Final_Project
                 MessageBox.Show(" Registration Succeed", "Information");
 
 
-
-
-                /*  try
-                  {
-
-                      string sql1 = "SELECT MAX(ItemId) FROM Items";
-                      SqlCommand cmd = new SqlCommand(sql1, con);
-
-                      SqlDataReader dr = cmd.ExecuteReader();
-
-                      if (dr.Read())
-                      {
-                          // Check if the value is convertible to int
-                          if (int.TryParse(dr[0].ToString(), out int maxID))
-                          {
-                              int newID = maxID + 1;
-                              this.txtId.Text = newID.ToString();
-                          }
-                          else
-                          {
-                              // Handle the case where the value is not a valid integer
-                              this.txtId.Text = "1";
-                          }
-                      }
-                      else
-                      {
-                          // Handle the case where there are no records in the table
-                          this.txtId.Text = "1";
-                      }
-
-                  }
-                  catch (SqlException)
-                  {
-                      MessageBox.Show(" Something went wrong ", "Information");
-                  }*/
+                EmpIdAutoIncrement();
+                AdminIdAutoIncrement();
 
                 //Disconnect from the sql server
                 con.Close();
@@ -176,6 +264,42 @@ namespace Final_Project
                 {
                     MessageBox.Show(" Something went wrong ", "Information");
                 }*/
+            }
+        }
+
+        private void Admin_Create_Account_Load(object sender, EventArgs e)
+        {
+            EmpIdAutoIncrement();
+            AdminIdAutoIncrement();
+        }
+
+        private void txtEcont_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //prevent letters entering
+
+            if (!char.IsControl(e.KeyChar) && !Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //prevent letters entering
+
+            if (!char.IsControl(e.KeyChar) && !Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtAge_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //prevent letters entering
+
+            if (!char.IsControl(e.KeyChar) && !Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

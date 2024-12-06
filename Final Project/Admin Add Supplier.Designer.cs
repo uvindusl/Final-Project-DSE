@@ -150,6 +150,7 @@
             this.Controls.Add(this.txtName);
             this.Name = "Admin_Add_Supplier";
             this.Text = "Admin_Add_Supplier";
+            this.Load += new System.EventHandler(this.Admin_Add_Supplier_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

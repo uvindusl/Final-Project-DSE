@@ -60,6 +60,7 @@
             // 
             // txtId
             // 
+            this.txtId.Enabled = false;
             this.txtId.Location = new System.Drawing.Point(614, 30);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(100, 22);
@@ -99,6 +100,7 @@
             this.txtNo.Name = "txtNo";
             this.txtNo.Size = new System.Drawing.Size(100, 22);
             this.txtNo.TabIndex = 38;
+            this.txtNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNo_KeyPress);
             // 
             // label3
             // 
@@ -143,6 +145,7 @@
             // 
             // txtAid
             // 
+            this.txtAid.Enabled = false;
             this.txtAid.Location = new System.Drawing.Point(614, 86);
             this.txtAid.Name = "txtAid";
             this.txtAid.Size = new System.Drawing.Size(100, 22);
@@ -256,6 +259,7 @@
             this.txtAge.Name = "txtAge";
             this.txtAge.Size = new System.Drawing.Size(100, 22);
             this.txtAge.TabIndex = 56;
+            this.txtAge.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAge_KeyPress);
             // 
             // label13
             // 
@@ -288,6 +292,7 @@
             this.txtEcont.Name = "txtEcont";
             this.txtEcont.Size = new System.Drawing.Size(100, 22);
             this.txtEcont.TabIndex = 60;
+            this.txtEcont.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEcont_KeyPress);
             // 
             // Admin_Create_Account
             // 
@@ -324,6 +329,7 @@
             this.Controls.Add(this.txtName);
             this.Name = "Admin_Create_Account";
             this.Text = "Admin_Create_Account";
+            this.Load += new System.EventHandler(this.Admin_Create_Account_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
