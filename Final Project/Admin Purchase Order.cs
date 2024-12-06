@@ -66,7 +66,7 @@ namespace Final_Project
             con.Open();
 
             //commands
-            string sql = "SELECT pName From Product";
+            string sql = "SELECT pName FROM Product WHERE pType='Hardware'";
             SqlCommand com = new SqlCommand(sql, con);
 
             //Access Data
@@ -202,50 +202,84 @@ namespace Final_Project
             con.Close();
         }
 
-        private void data_insetrt_purchaserder()
+        private void data_insert_purchaseorder()
         {
-            //connection
-            string cs = @"Data Source=HPNotebook; 
-            Initial Catalog=DSE_FinalProject; 
-            Integrated Security=True";
-            SqlConnection con = new SqlConnection(cs);
-            con.Open();
+            try
+            {
+                // Connection string
+                string cs = @"Data Source=HPNotebook; 
+                      Initial Catalog=DSE_FinalProject; 
+                      Integrated Security=True";
 
-            //commands
-            string sql1 = "SELECT supId FROM Supplier WHERE supName=@name";
-            SqlCommand com1 = new SqlCommand(sql1, con);
-            com1.Parameters.AddWithValue("@name", this.combosname.Text);
+                using (SqlConnection con = new SqlConnection(cs))
+                {
+                    con.Open();
 
-            //access data using data reader method
-            SqlDataReader dr = com1.ExecuteReader();
-            dr.Read();
-            string sid = dr.GetValue(0).ToString();
+                    // First command to get supId
+                    string sql1 = "SELECT supId FROM Supplier WHERE supName=@name";
+                    using (SqlCommand com1 = new SqlCommand(sql1, con))
+                    {
+                        com1.Parameters.AddWithValue("@name", this.combosname.Text);
 
-            con.Close();
+                        using (SqlDataReader dr = com1.ExecuteReader())
+                        {
+                            if (dr.Read())
+                            {
+                                string sid = dr.GetValue(0).ToString();
 
-            con.Open();
+                                dr.Close(); // Ensure the data reader is closed
 
-            //Command
-            string sql = "INSERT INTO PurchaseOrder(purschaseOrderId,item,quantity,dateTime,totalAmount,totalDiscount,adminId,supId) VALUES(@poid,@item,@qty,@datetime,@tamount,@tdiscount,@aid,@sid)";
-            SqlCommand com = new SqlCommand(sql, con);
-            com.Parameters.AddWithValue("@poid", this.txtpid.Text);
-            com.Parameters.AddWithValue("@item", this.comboproduct.Text);
-            com.Parameters.AddWithValue("@qty", Convert.ToInt32(this.numaricqunatity.Value));
-            com.Parameters.AddWithValue("@datetime", DateTime.Now);
-            double total = Convert.ToDouble(this.txtprice.Text) * Convert.ToDouble(this.numaricqunatity.Value);
-            com.Parameters.AddWithValue("@tamount", total);
-            double discount = Convert.ToDouble(this.txtdicount.Text) * Convert.ToDouble(this.numaricqunatity.Value);
-            com.Parameters.AddWithValue("@tdiscount", discount);
-            com.Parameters.AddWithValue("@aid", this.comboaid.Text);
-            com.Parameters.AddWithValue("@sid", sid);
+                                // Second command to insert into PurchaseOrder
+                                string sql = "INSERT INTO PurchaseOrder(purschaseOrderId, dateTime, totalAmount, totalDiscount, adminId, supId) " +
+                                             "VALUES(@poid, @datetime, @tamount, @tdiscount, @aid, @sid)";
+                                using (SqlCommand com = new SqlCommand(sql, con))
+                                {
+                                    com.Parameters.AddWithValue("@poid", this.txtpid.Text);
+                                    com.Parameters.AddWithValue("@datetime", DateTime.Now);
 
-            //Execute
-            int ret = com.ExecuteNonQuery();
-            MessageBox.Show("No of records inserted: " + ret, "Information");
+                                    if (decimal.TryParse(this.txttotalamount.Text, out decimal totalAmount))
+                                    {
+                                        com.Parameters.AddWithValue("@tamount", totalAmount);
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Invalid total amount.");
+                                        return;
+                                    }
 
-            con.Close();
+                                    if (decimal.TryParse(this.txttotaldiscount.Text, out decimal totalDiscount))
+                                    {
+                                        com.Parameters.AddWithValue("@tdiscount", totalDiscount);
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Invalid total discount.");
+                                        return;
+                                    }
 
+                                    com.Parameters.AddWithValue("@aid", this.comboaid.Text);
+                                    com.Parameters.AddWithValue("@sid", sid);
+
+                                    // Execute
+                                    int ret = com.ExecuteNonQuery();
+                                    MessageBox.Show("Number of records inserted: " + ret, "Information");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Supplier not found.");
+                            }
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Something went wrong: " + ex.Message, "Information");
+            }
         }
+     
+
 
         private void data_insetrt_purchaserderconsists()
         {
@@ -312,8 +346,9 @@ namespace Final_Project
             con.Open();
 
             //Load Data to GridView
-            string sql = "SELECT * FROM PurchaseOrderConsists";
+            string sql = "SELECT * FROM PurchaseOrderConsists WHERE PurchaseOrderId=@pid";
             SqlCommand com = new SqlCommand(sql, con);
+            com.Parameters.AddWithValue("@pid", this.txtpid.Text);
 
             //Data Adaptor
             SqlDataAdapter dap = new SqlDataAdapter(com);
@@ -382,7 +417,6 @@ namespace Final_Project
             else
             {
                 calculate_the_total();
-                data_insetrt_purchaserder();
                 data_insetrt_purchaserderconsists();
                 data_load_to_grid();
                 textbox_clear();
@@ -392,8 +426,10 @@ namespace Final_Project
 
         private void btnclose_Click(object sender, EventArgs e)
         {
+            //truncate thing
+
             //connection
-            string cs = @"Data Source=HPNotebook; 
+            /*string cs = @"Data Source=HPNotebook; 
             Initial Catalog=DSE_FinalProject; 
             Integrated Security=True";
             SqlConnection con = new SqlConnection(cs);
@@ -404,9 +440,15 @@ namespace Final_Project
             SqlCommand com = new SqlCommand(sql, con);
             com.ExecuteNonQuery();
 
-            con.Close();
+            con.Close();*/
 
             this.Close();
+        }
+
+        private void btnsavetodatabse_Click(object sender, EventArgs e)
+        {
+
+            data_insert_purchaseorder();
         }
     }
 }

@@ -50,7 +50,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.combosname = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.comboaid = new System.Windows.Forms.ComboBox();
@@ -62,11 +61,13 @@
             this.txttotalamount = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.btnclose = new System.Windows.Forms.Button();
+            this.btnsavetodatabse = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numaricqunatity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label8
@@ -109,7 +110,7 @@
             this.txtdicount.Name = "txtdicount";
             this.txtdicount.Size = new System.Drawing.Size(188, 20);
             this.txtdicount.TabIndex = 33;
-            this.txtdicount.Text = "0.00";
+            this.txtdicount.Text = "0";
             // 
             // label15
             // 
@@ -307,16 +308,6 @@
             this.panel2.Size = new System.Drawing.Size(253, 10);
             this.panel2.TabIndex = 1;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::Final_Project.Properties.Resources.WhatsApp_Image_2024_11_07_at_09_30_23_20f03f32_1;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(39, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(205, 86);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // combosname
             // 
             this.combosname.FormattingEnabled = true;
@@ -405,7 +396,7 @@
             // 
             // btnclose
             // 
-            this.btnclose.Location = new System.Drawing.Point(1252, 576);
+            this.btnclose.Location = new System.Drawing.Point(1298, 579);
             this.btnclose.Name = "btnclose";
             this.btnclose.Size = new System.Drawing.Size(75, 23);
             this.btnclose.TabIndex = 39;
@@ -413,11 +404,32 @@
             this.btnclose.UseVisualStyleBackColor = true;
             this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
             // 
+            // btnsavetodatabse
+            // 
+            this.btnsavetodatabse.Location = new System.Drawing.Point(1149, 579);
+            this.btnsavetodatabse.Name = "btnsavetodatabse";
+            this.btnsavetodatabse.Size = new System.Drawing.Size(75, 23);
+            this.btnsavetodatabse.TabIndex = 40;
+            this.btnsavetodatabse.Text = "Save";
+            this.btnsavetodatabse.UseVisualStyleBackColor = true;
+            this.btnsavetodatabse.Click += new System.EventHandler(this.btnsavetodatabse_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Final_Project.Properties.Resources.WhatsApp_Image_2024_11_07_at_09_30_23_20f03f32_1;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(39, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(205, 86);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // Admin_Purchase_Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1401, 627);
+            this.Controls.Add(this.btnsavetodatabse);
             this.Controls.Add(this.btnclose);
             this.Controls.Add(this.txttotaldiscount);
             this.Controls.Add(this.label16);
@@ -436,9 +448,9 @@
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numaricqunatity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -480,5 +492,6 @@
         private System.Windows.Forms.TextBox txttotalamount;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button btnclose;
+        private System.Windows.Forms.Button btnsavetodatabse;
     }
 }
