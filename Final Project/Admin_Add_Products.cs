@@ -271,6 +271,10 @@ namespace Final_Project
             {
                 MessageBox.Show("Enter a price");
             }
+            else if (txtSprice.Text == "")
+            {
+                MessageBox.Show("Enter a Selling price");
+            }
             else if (!rdH.Checked && !rdS.Checked)
             {
                 MessageBox.Show("Select a type");
@@ -291,7 +295,7 @@ namespace Final_Project
 
                     //Define a command
 
-                    string sql = "INSERT INTO Product (productId,pName,pDescription,pType,pPrice) VALUES (@productId,@pName,@pDescription,@pType,@pPrice)";
+                    string sql = "INSERT INTO Product (productId,pName,pDescription,pType,pPrice,pSellingPrice) VALUES (@productId,@pName,@pDescription,@pType,@pPrice,@pSellingPrice)";
 
                     SqlCommand com = new SqlCommand(sql, con, transaction);
                     
@@ -310,7 +314,7 @@ namespace Final_Project
                     }
                 
                     com.Parameters.AddWithValue("@pPrice", this.txtPrice.Text);
-              
+                    com.Parameters.AddWithValue("@pSellingPrice", this.txtSprice.Text);
 
                     if (rdH.Checked)
                     {
@@ -427,6 +431,7 @@ namespace Final_Project
                             this.txtName.Text = "";
                             this.txtDescription.Text = "";
                             this.txtPrice.Text = "";
+                            this.txtSprice.Text = "";
                             this.rdS.Checked = false;
                             this.txtSId.Text = "";
                             this.txtVersion.Text = "";
@@ -494,6 +499,14 @@ namespace Final_Project
         }
 
         private void txtWarranty_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtSprice_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !Char.IsDigit(e.KeyChar))
             {

@@ -58,6 +58,8 @@
             this.txtFileSize = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
+            this.txtSprice = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -319,11 +321,30 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // txtSprice
+            // 
+            this.txtSprice.Location = new System.Drawing.Point(670, 180);
+            this.txtSprice.Name = "txtSprice";
+            this.txtSprice.Size = new System.Drawing.Size(100, 22);
+            this.txtSprice.TabIndex = 31;
+            this.txtSprice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSprice_KeyPress);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(545, 180);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(82, 16);
+            this.label14.TabIndex = 30;
+            this.label14.Text = "Selling Price";
+            // 
             // Admin_Add_Products
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(807, 579);
+            this.Controls.Add(this.txtSprice);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtSub);
             this.Controls.Add(this.label12);
@@ -394,5 +415,7 @@
         private System.Windows.Forms.TextBox txtFileSize;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.TextBox txtSprice;
+        private System.Windows.Forms.Label label14;
     }
 }

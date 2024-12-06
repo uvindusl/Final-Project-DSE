@@ -43,7 +43,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtType = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -56,6 +55,7 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtEcont = new System.Windows.Forms.TextBox();
+            this.txtType = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtId
@@ -187,15 +187,6 @@
             this.label8.TabIndex = 48;
             this.label8.Text = "Employee Type";
             // 
-            // txtType
-            // 
-            this.txtType.Enabled = false;
-            this.txtType.Location = new System.Drawing.Point(614, 58);
-            this.txtType.Name = "txtType";
-            this.txtType.Size = new System.Drawing.Size(100, 22);
-            this.txtType.TabIndex = 47;
-            this.txtType.Text = "Admin";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -294,6 +285,15 @@
             this.txtEcont.TabIndex = 60;
             this.txtEcont.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEcont_KeyPress);
             // 
+            // txtType
+            // 
+            this.txtType.Enabled = false;
+            this.txtType.Location = new System.Drawing.Point(614, 58);
+            this.txtType.Name = "txtType";
+            this.txtType.Size = new System.Drawing.Size(100, 22);
+            this.txtType.TabIndex = 47;
+            this.txtType.Text = "Admin";
+            // 
             // Admin_Create_Account
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -352,7 +352,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtType;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
@@ -365,5 +364,6 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtEcont;
+        private System.Windows.Forms.TextBox txtType;
     }
 }

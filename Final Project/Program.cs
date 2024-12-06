@@ -19,10 +19,10 @@ namespace Final_Project
 
             Application.Run(new Admin_Add_Products());
             //Application.Run(new Sales_person_Add_customer());
-           // Application.Run(new Admin_Add_Supplier());
-           // Application.Run(new Admin_Create_Account());
+            // Application.Run(new Admin_Add_Supplier());
+            // Application.Run(new Admin_Create_Account());
             //Application.Run(new Technician_Add_Customer());
-            
+             //Application.Run(new Admin_Add_employees());
 
 
 
