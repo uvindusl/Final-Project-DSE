@@ -23,6 +23,8 @@ namespace Final_Project
 
         private void adminidcombox()
         {
+            //getting admin ids to combo box
+
             comboaid.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             comboaid.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             comboaid.AutoCompleteSource = AutoCompleteSource.ListItems;
@@ -50,6 +52,8 @@ namespace Final_Project
 
         private void productcombo()
         {
+            //getting product ids to combobox
+
             comboproduct.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             comboproduct.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             comboproduct.AutoCompleteSource = AutoCompleteSource.ListItems;
@@ -77,6 +81,8 @@ namespace Final_Project
 
         private void suppliercombo()
         {
+            //getting supplier ids to combobox
+
             combosname.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             combosname.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             combosname.AutoCompleteSource = AutoCompleteSource.ListItems;
@@ -104,6 +110,8 @@ namespace Final_Project
 
         private void pid_auto_incrment()
         {
+            //product ID auto increment code
+
             try
             {
                 string cs = @"Data Source=HPNotebook; 
@@ -164,6 +172,7 @@ namespace Final_Project
 
         private void Admin_Purchase_Order_Load(object sender, EventArgs e)
         {
+            //calling methods
             adminidcombox();
             productcombo();
             suppliercombo();
@@ -223,8 +232,10 @@ namespace Final_Project
             com.Parameters.AddWithValue("@item", this.comboproduct.Text);
             com.Parameters.AddWithValue("@qty", Convert.ToInt32(this.numaricqunatity.Value));
             com.Parameters.AddWithValue("@datetime", DateTime.Now);
-            com.Parameters.AddWithValue("@tamount", this.txttotalamount.Text);
-            com.Parameters.AddWithValue("@tdiscount", this.txttotaldiscount.Text);
+            double total = Convert.ToDouble(this.txtprice.Text) * Convert.ToDouble(this.numaricqunatity.Value);
+            com.Parameters.AddWithValue("@tamount", total);
+            double discount = Convert.ToDouble(this.txtdicount.Text) * Convert.ToDouble(this.numaricqunatity.Value);
+            com.Parameters.AddWithValue("@tdiscount", discount);
             com.Parameters.AddWithValue("@aid", this.comboaid.Text);
             com.Parameters.AddWithValue("@sid", sid);
 
@@ -238,10 +249,7 @@ namespace Final_Project
 
         private void data_insetrt_purchaserderconsists()
         {
-            double price = Convert.ToDouble(this.txtprice.Text);
-            int qty = Convert.ToInt32(this.numaricqunatity.Value);
-            double total1 = price * qty;
-
+            
             //connection
             string cs = @"Data Source=HPNotebook; 
             Initial Catalog=DSE_FinalProject; 
@@ -284,12 +292,13 @@ namespace Final_Project
             com.Parameters.AddWithValue("@hid", hid);
             com.Parameters.AddWithValue("@qty", Convert.ToInt32(this.numaricqunatity.Value));
             com.Parameters.AddWithValue("@discount", this.txttotaldiscount.Text);
-            com.Parameters.AddWithValue("@subtotal", total1);
+            double subtotal = Convert.ToDouble(this.txtprice.Text) * Convert.ToDouble(this.numaricqunatity.Value);
+            com.Parameters.AddWithValue("@subtotal", subtotal);
 
             //Execute
             int ret = com.ExecuteNonQuery();
-            MessageBox.Show("No of records inserted: " + ret, "Information");
-
+            
+            //connecion close
             con.Close();
         }
 
@@ -313,25 +322,72 @@ namespace Final_Project
             this.dataGridView1.DataSource = ds.Tables[0];
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void calculate_the_total()
         {
+            //total amount
             double price = Convert.ToDouble(this.txtprice.Text);
-            int qty = Convert.ToInt32(this.numaricqunatity.Value);
-            double total1 = price*qty;
+            double qty = Convert.ToDouble(this.numaricqunatity.Value);
             double total = Convert.ToDouble(this.txttotalamount.Text);
-            total =+ total1;
+
+            //calculation
+            double subtotal = price * qty;
+            total = total+subtotal;
+
+            //display totalamount
             this.txttotalamount.Text = total.ToString();
-            this.txttotalamount.Text = total.ToString();
+
+            //total discount
             double discount = Convert.ToDouble(this.txtdicount.Text);
-            double totaldis1 = discount*qty;
             double totaldis = Convert.ToDouble(this.txttotaldiscount.Text);
-            totaldis = +totaldis1;
+
+            //calculation
+            double subdiscount = discount * qty;
+            totaldis = totaldis+subdiscount;
+
+            //display totaldiscount
             this.txttotaldiscount.Text = totaldis.ToString();
 
 
-            data_insetrt_purchaserder();
-            data_insetrt_purchaserderconsists();
-            data_load_to_grid();
+        }
+
+        private void textbox_clear()
+        {
+            //after clicking btnmark textbox and combobox clear
+
+            this.comboproduct.Text = "";
+            this.numaricqunatity.Value = 0;
+            this.txtprice.Clear();
+            this.txtdicount.Text = "0.00";
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(this.comboaid.Text == "")
+            {
+                MessageBox.Show("Select Admin ID");
+            }
+            else if(this.combosname.Text == "")
+            {
+                MessageBox.Show("Select Supplier Name");
+            }
+            else if(this.comboproduct.Text == "")
+            {
+                MessageBox.Show("Select Product Name");
+            }
+            else if(this.numaricqunatity.Value == 0)
+            {
+                MessageBox.Show("Add value more than 0");
+            }
+            else
+            {
+                calculate_the_total();
+                data_insetrt_purchaserder();
+                data_insetrt_purchaserderconsists();
+                data_load_to_grid();
+                textbox_clear();
+            }
+            
         }
 
         private void btnclose_Click(object sender, EventArgs e)
@@ -349,6 +405,8 @@ namespace Final_Project
             com.ExecuteNonQuery();
 
             con.Close();
+
+            this.Close();
         }
     }
 }
