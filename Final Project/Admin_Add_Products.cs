@@ -330,12 +330,13 @@ namespace Final_Project
                         {
                             //Define a command
 
-                            string sql1 = "INSERT INTO HardwareProduct (hardwareProductId,serialNumber,WarrantyPeriod) VALUES (@hardwareProductId,@serialNumber,@WarrantyPeriod)";
+                            string sql1 = "INSERT INTO HardwareProduct (hardwareProductId,serialNumber,WarrantyPeriod,productId) VALUES (@hardwareProductId,@serialNumber,@WarrantyPeriod,@productId)";
                             string sql3 = "INSERT INTO InventoryProducts (inventoryProductId,hardawareProductId)  VALUES (@inventoryProductId,@hwProductId)";
 
                             SqlCommand com1 = new SqlCommand(sql1, con , transaction);
                             SqlCommand com3 = new SqlCommand(sql3, con, transaction);
 
+                            com1.Parameters.AddWithValue("@productId", this.txtId.Text);
                             com1.Parameters.AddWithValue("@hardwareProductId", this.txtHId.Text);
                             com1.Parameters.AddWithValue("@serialNumber", this.txtSerial.Text);
                             com1.Parameters.AddWithValue("@WarrantyPeriod", this.txtWarranty.Text);
@@ -400,10 +401,11 @@ namespace Final_Project
                         {
                             //Define a command
 
-                            string sql2 = "INSERT INTO SoftwareProduct (softwareProductId,version,licenseType,platform,fileSize,subscriptionPeriod) VALUES (@softwareProductId,@version,@licenseType,@platform,@fileSize,@subscriptionPeriod)";
+                            string sql2 = "INSERT INTO SoftwareProduct (softwareProductId,version,licenseType,platform,fileSize,subscriptionPeriod,productId) VALUES (@softwareProductId,@version,@licenseType,@platform,@fileSize,@subscriptionPeriod,@productId)";
 
                             SqlCommand com2 = new SqlCommand(sql2, con, transaction);
 
+                            com2.Parameters.AddWithValue("@productId", this.txtId.Text);
                             com2.Parameters.AddWithValue("@softwareProductId", this.txtSId.Text);
                             com2.Parameters.AddWithValue("@version", this.txtVersion.Text);
                             com2.Parameters.AddWithValue("@licenseType", this.txtLicense.Text);

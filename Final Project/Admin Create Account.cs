@@ -173,7 +173,7 @@ namespace Final_Project
             }
             else if (no.Length != 10) //number should be 10 numbers
             {
-                MessageBox.Show("Enter a valid number");
+                MessageBox.Show("Enter a valid contact number");
             }
             else if (txtHno.Text == "")
             {
@@ -226,7 +226,7 @@ namespace Final_Project
                 //Define a command
 
                 string sql = "INSERT INTO Employee (empId,empName,empUserName,empTel,empAge,empEmail,empType,houseNo,street,city,empEmargancyCont,empPassword) VALUES (@empId,@empName,@empUserName,@empTel,@empAge,@empEmail,@empType,@houseNo,@street,@city,@empEmargancyCont,@empPassword)";
-                string sql1 = "INSERT INTO Admin (adminId) Values (@adminId)";
+                string sql1 = "INSERT INTO Admin (adminId,empId) Values (@adminId,@eId)";
 
                 SqlCommand com = new SqlCommand(sql, con);
                 SqlCommand com1 = new SqlCommand(sql1, con);
@@ -244,6 +244,7 @@ namespace Final_Project
                 com.Parameters.AddWithValue("@empEmargancyCont", this.txtEcont.Text);
                 com.Parameters.AddWithValue("@empPassword", this.txtPassword.Text);
                 com1.Parameters.AddWithValue("@adminId", this.txtAid.Text);
+                com1.Parameters.AddWithValue("@eId", this.txtId.Text);
 
 
                 //Execute the command
