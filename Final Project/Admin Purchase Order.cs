@@ -177,6 +177,7 @@ namespace Final_Project
             productcombo();
             suppliercombo();
             pid_auto_incrment();
+            btnsavetodatabse.Enabled = false;
 
         }
 
@@ -331,7 +332,8 @@ namespace Final_Project
 
             //Execute
             int ret = com.ExecuteNonQuery();
-            
+            MessageBox.Show("Number of records inserted: " + ret, "Information");
+
             //connecion close
             con.Close();
         }
@@ -420,6 +422,7 @@ namespace Final_Project
                 data_insetrt_purchaserderconsists();
                 data_load_to_grid();
                 textbox_clear();
+                btnsavetodatabse.Enabled = true;
             }
             
         }
