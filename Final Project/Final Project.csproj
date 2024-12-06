@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin Add Supplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin Add Supplier.Designer.cs">
+      <DependentUpon>Admin Add Supplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Create Account.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin Create Account.Designer.cs">
+      <DependentUpon>Admin Create Account.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin_Add_Products.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +84,12 @@
     <Compile Include="Technician Add Customer.Designer.cs">
       <DependentUpon>Technician Add Customer.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Admin Add Supplier.resx">
+      <DependentUpon>Admin Add Supplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin Create Account.resx">
+      <DependentUpon>Admin Create Account.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin_Add_Products.resx">
       <DependentUpon>Admin_Add_Products.cs</DependentUpon>
     </EmbeddedResource>

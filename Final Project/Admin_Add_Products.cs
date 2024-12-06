@@ -107,6 +107,7 @@ namespace Final_Project
 
                     con.Open();
 
+                    //create an object to execute the both commands at ones.
                     SqlTransaction transaction = con.BeginTransaction();
 
                     //Define a command
@@ -135,9 +136,9 @@ namespace Final_Project
                     //Execute the command
                     //com.ExecuteNonQuery();
 
-                    /*  try
+                    /*  try   //id auto increament
                       {
-
+                            
                           string sql1 = "SELECT MAX(ItemId) FROM Items";
                           SqlCommand cmd = new SqlCommand(sql1, con);
 
