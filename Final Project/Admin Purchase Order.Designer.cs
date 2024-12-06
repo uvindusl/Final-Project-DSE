@@ -61,7 +61,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.txttotalamount = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.btnsave = new System.Windows.Forms.Button();
+            this.btnclose = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -109,15 +109,16 @@
             this.txtdicount.Name = "txtdicount";
             this.txtdicount.Size = new System.Drawing.Size(188, 20);
             this.txtdicount.TabIndex = 33;
+            this.txtdicount.Text = "0.00";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(80, 287);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(49, 13);
+            this.label15.Size = new System.Drawing.Size(95, 13);
             this.label15.TabIndex = 32;
-            this.label15.Text = "Discount";
+            this.label15.Text = "Discount (optional)";
             // 
             // comboproduct
             // 
@@ -126,11 +127,13 @@
             this.comboproduct.Name = "comboproduct";
             this.comboproduct.Size = new System.Drawing.Size(188, 21);
             this.comboproduct.TabIndex = 31;
+            this.comboproduct.SelectedIndexChanged += new System.EventHandler(this.comboproduct_SelectedIndexChanged);
             // 
             // txtprice
             // 
             this.txtprice.Location = new System.Drawing.Point(252, 241);
             this.txtprice.Name = "txtprice";
+            this.txtprice.ReadOnly = true;
             this.txtprice.Size = new System.Drawing.Size(188, 20);
             this.txtprice.TabIndex = 29;
             // 
@@ -347,6 +350,7 @@
             this.button1.TabIndex = 37;
             this.button1.Text = "Mark";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
             // 
@@ -367,8 +371,10 @@
             // 
             this.txttotaldiscount.Location = new System.Drawing.Point(1185, 527);
             this.txttotaldiscount.Name = "txttotaldiscount";
+            this.txttotaldiscount.ReadOnly = true;
             this.txttotaldiscount.Size = new System.Drawing.Size(188, 20);
             this.txttotaldiscount.TabIndex = 37;
+            this.txttotaldiscount.Text = "0.00";
             // 
             // label16
             // 
@@ -383,8 +389,10 @@
             // 
             this.txttotalamount.Location = new System.Drawing.Point(1185, 481);
             this.txttotalamount.Name = "txttotalamount";
+            this.txttotalamount.ReadOnly = true;
             this.txttotalamount.Size = new System.Drawing.Size(188, 20);
             this.txttotalamount.TabIndex = 35;
+            this.txttotalamount.Text = "0.00";
             // 
             // label17
             // 
@@ -395,21 +403,22 @@
             this.label17.TabIndex = 34;
             this.label17.Text = "Total Amount";
             // 
-            // btnsave
+            // btnclose
             // 
-            this.btnsave.Location = new System.Drawing.Point(1195, 576);
-            this.btnsave.Name = "btnsave";
-            this.btnsave.Size = new System.Drawing.Size(75, 23);
-            this.btnsave.TabIndex = 38;
-            this.btnsave.Text = "Save";
-            this.btnsave.UseVisualStyleBackColor = true;
+            this.btnclose.Location = new System.Drawing.Point(1252, 576);
+            this.btnclose.Name = "btnclose";
+            this.btnclose.Size = new System.Drawing.Size(75, 23);
+            this.btnclose.TabIndex = 39;
+            this.btnclose.Text = "Close";
+            this.btnclose.UseVisualStyleBackColor = true;
+            this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
             // 
             // Admin_Purchase_Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1401, 627);
-            this.Controls.Add(this.btnsave);
+            this.Controls.Add(this.btnclose);
             this.Controls.Add(this.txttotaldiscount);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.txttotalamount);
@@ -418,6 +427,8 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Admin_Purchase_Order";
             this.Text = "Admin Purchase Order";
             this.Load += new System.EventHandler(this.Admin_Purchase_Order_Load);
@@ -468,6 +479,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txttotalamount;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Button btnsave;
+        private System.Windows.Forms.Button btnclose;
     }
 }
