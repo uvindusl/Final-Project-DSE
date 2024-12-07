@@ -81,6 +81,7 @@ namespace Final_Project
 
         private void getValuesToboxCusId()
         {
+            //loading values to the combo box cusid
             try
             {
                 //Create a connection
@@ -112,18 +113,55 @@ namespace Final_Project
             }
         }
 
+        private void getValuesToboxtxtName()
+        {
+            //loading values to the combo box txtName
+            try
+            {
+                //Create a connection
+
+                string cs = "Data Source = LAPTOP-DOH91PI2;Initial Catalog = DSE_FinalProject; Integrated Security = True ";
+                SqlConnection con = new SqlConnection(cs);
+
+                con.Open();
+
+                //Define a command
+
+                String sql = "SELECT cusName FROM Customer";
+
+                SqlCommand cmd = new SqlCommand(sql, con);
+
+
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    txtName.Items.Add(dr["cusName"].ToString());
+
+                }
+                dr.Close();
+                con.Close();
+            }
+            catch
+            {
+                MessageBox.Show(" Something went wrong ", "Information");
+            }
+        }
         private void Technician__Jobnotes_Load(object sender, EventArgs e)
         {
             IdAutoIncrement();
             this.txtDT.Text = DateTime.Now.ToString();
             getValuesToboxCusId();
+            getValuesToboxtxtName();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             //checking any empty values
-
-            if (txtDesc.Text == "")
+            if (boxCusId.Text == "")
+            {
+                MessageBox.Show("Select a customer Id");
+            }
+            else if (txtDesc.Text == "")
             {
                 MessageBox.Show("Enter a Description");
             }          
@@ -202,6 +240,39 @@ namespace Final_Project
 
                 dr.Close();
                 con.Close();
+            /*}
+            catch (SqlException)
+            {
+                MessageBox.Show(" Something went wrong ", "Information");
+            }*/
+        }
+
+        private void txtName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            /* try
+            {*/
+            //Create a connection
+
+            string cs = "Data Source = LAPTOP-DOH91PI2;Initial Catalog = DSE_FinalProject; Integrated Security = True ";
+            SqlConnection con = new SqlConnection(cs);
+
+            con.Open();
+
+            //Define a command
+
+            String sql = "SELECT cusId FROM Customer Where cusName = @cusName";
+
+            SqlCommand cmd = new SqlCommand(sql, con);
+
+            cmd.Parameters.AddWithValue("@cusName", this.txtName.Text);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+            dr.Read();
+
+            this.boxCusId.Text = dr.GetValue(0).ToString();
+
+            dr.Close();
+            con.Close();
             /*}
             catch (SqlException)
             {

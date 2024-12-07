@@ -38,8 +38,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.boxCusId = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
             this.btnPrint = new System.Windows.Forms.Button();
+            this.txtName = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txtId
@@ -130,14 +130,6 @@
             this.label3.TabIndex = 46;
             this.label3.Text = "Customer Name";
             // 
-            // txtName
-            // 
-            this.txtName.Enabled = false;
-            this.txtName.Location = new System.Drawing.Point(573, 155);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(100, 22);
-            this.txtName.TabIndex = 47;
-            // 
             // btnPrint
             // 
             this.btnPrint.Enabled = false;
@@ -148,13 +140,22 @@
             this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = true;
             // 
+            // txtName
+            // 
+            this.txtName.FormattingEnabled = true;
+            this.txtName.Location = new System.Drawing.Point(573, 150);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(121, 24);
+            this.txtName.TabIndex = 49;
+            this.txtName.SelectedIndexChanged += new System.EventHandler(this.txtName_SelectedIndexChanged);
+            // 
             // Technician__Jobnotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.txtName);
+            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.boxCusId);
             this.Controls.Add(this.label2);
@@ -185,7 +186,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox boxCusId;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.ComboBox txtName;
     }
 }
