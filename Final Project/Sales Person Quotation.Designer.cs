@@ -77,6 +77,7 @@
             this.btnsavetodatabse.TabIndex = 71;
             this.btnsavetodatabse.Text = "Save";
             this.btnsavetodatabse.UseVisualStyleBackColor = true;
+            this.btnsavetodatabse.Click += new System.EventHandler(this.btnsavetodatabse_Click);
             // 
             // btnclose
             // 
@@ -86,6 +87,7 @@
             this.btnclose.TabIndex = 70;
             this.btnclose.Text = "Close";
             this.btnclose.UseVisualStyleBackColor = true;
+            this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
             // 
             // txttotaldiscount
             // 
@@ -206,6 +208,7 @@
             this.numaricqunatity.Name = "numaricqunatity";
             this.numaricqunatity.Size = new System.Drawing.Size(130, 20);
             this.numaricqunatity.TabIndex = 38;
+            this.numaricqunatity.ValueChanged += new System.EventHandler(this.numaricqunatity_ValueChanged);
             // 
             // button1
             // 
@@ -215,6 +218,7 @@
             this.button1.TabIndex = 37;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // combocname
             // 
@@ -265,6 +269,7 @@
             this.comboproduct.Name = "comboproduct";
             this.comboproduct.Size = new System.Drawing.Size(188, 21);
             this.comboproduct.TabIndex = 31;
+            this.comboproduct.SelectedIndexChanged += new System.EventHandler(this.comboproduct_SelectedIndexChanged);
             // 
             // txtprice
             // 
