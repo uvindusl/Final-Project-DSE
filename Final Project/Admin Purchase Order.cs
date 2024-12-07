@@ -370,9 +370,6 @@ namespace Final_Project
             double subtotal = price * qty;
             total = total+subtotal;
 
-            //display totalamount
-            this.txttotalamount.Text = total.ToString();
-
             //total discount
             double discount = Convert.ToDouble(this.txtdicount.Text);
             double totaldis = Convert.ToDouble(this.txttotaldiscount.Text);
@@ -380,6 +377,12 @@ namespace Final_Project
             //calculation
             double subdiscount = discount * qty;
             totaldis = totaldis+subdiscount;
+
+            //totalamount
+            total = total - totaldis;
+
+            //display totalamount
+            this.txttotalamount.Text = total.ToString();
 
             //display totaldiscount
             this.txttotaldiscount.Text = totaldis.ToString();
