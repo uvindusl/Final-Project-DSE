@@ -485,5 +485,54 @@ namespace Final_Project
                 e.Handled = true;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AdminUpdateCustomer adc = new AdminUpdateCustomer();
+            adc.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Admin_Add_Products adp = new Admin_Add_Products();
+            adp.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Admin_view_Product_inventory advi = new Admin_view_Product_inventory();
+            advi.Show();
+            this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Admin_View_Purchase_Order advpo = new Admin_View_Purchase_Order();
+            advpo.Show();
+            this.Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Admin_View_Search_orders avso = new Admin_View_Search_orders();
+            avso.Show();
+            this.Hide();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            AdminMakePaysheet admp = new AdminMakePaysheet();
+            admp.Show();
+            this.Hide();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Admin_Add_Supplier ads = new Admin_Add_Supplier();
+            ads.Show();
+            this.Hide();
+        }
     }
 }
