@@ -18,7 +18,7 @@ namespace Final_Project
                 SetProcessDPIAware();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SP_View_Software_Pd());
+            Application.Run(new Technician__Jobnotes());
         }
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         private static extern bool SetProcessDPIAware();
