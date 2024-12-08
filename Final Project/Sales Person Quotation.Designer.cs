@@ -103,9 +103,9 @@
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(1015, 531);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(51, 13);
+            this.label16.Size = new System.Drawing.Size(80, 13);
             this.label16.TabIndex = 68;
-            this.label16.Text = "Net Total";
+            this.label16.Text = "Estimated Total";
             // 
             // txttotalamount
             // 
@@ -121,9 +121,9 @@
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(1015, 485);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(69, 13);
+            this.label17.Size = new System.Drawing.Size(49, 13);
             this.label17.TabIndex = 66;
-            this.label17.Text = "Net Discount";
+            this.label17.Text = "Discount";
             // 
             // dataGridView1
             // 

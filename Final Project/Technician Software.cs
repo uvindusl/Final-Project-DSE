@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace Final_Project
 {
-    public partial class Sales_Person_Quotation : Form
+    public partial class Technician_Software : Form
     {
-        public Sales_Person_Quotation()
+        public Technician_Software()
         {
             InitializeComponent();
         }
 
-        //data insert order table ekata insert weddi salespersonge id eka parameters walin yanna hadanna oni
+        //data insert order table ekata insert weddi technicain id eka parameters walin yanna hadanna oni
 
         private void customercombo()
         {
@@ -65,7 +65,7 @@ namespace Final_Project
             con.Open();
 
             //commands
-            string sql = "SELECT pName FROM Product WHERE pType='Hardware'";
+            string sql = "SELECT pName FROM Product WHERE pType='Software'";
             SqlCommand com = new SqlCommand(sql, con);
 
             //Access Data
@@ -78,7 +78,7 @@ namespace Final_Project
             con.Close();
         }
 
-        private void auto_increment_qutationid()
+        private void auto_increment_serviceid()
         {
             try
             {
@@ -91,7 +91,7 @@ namespace Final_Project
                 {
                     con.Open();
 
-                    string sql1 = "SELECT MAX(qId) FROM [Quotation]";
+                    string sql1 = "SELECT MAX(serviceId) FROM [Service]";
                     using (SqlCommand cmd = new SqlCommand(sql1, con))
                     {
                         SqlDataReader dr = cmd.ExecuteReader();
@@ -100,7 +100,7 @@ namespace Final_Project
                         {
                             string maxItemId = dr[0]?.ToString(); // Use the null-conditional operator
 
-                            if (!string.IsNullOrEmpty(maxItemId) && maxItemId.StartsWith("Q"))
+                            if (!string.IsNullOrEmpty(maxItemId) && maxItemId.StartsWith("S"))
                             {
                                 // Extract the numeric part after the "O" prefix
                                 string numericPart = maxItemId.Substring(1);
@@ -109,24 +109,24 @@ namespace Final_Project
                                     // Increment the numeric part
                                     int newID = maxID + 1;
                                     // Format the new ID back to string with 'O' prefix and leading zeros
-                                    this.txtqid.Text = "Q" + newID.ToString("D2"); // D2 ensures at least two digits
+                                    this.txtsid.Text = "S" + newID.ToString("D2"); // D2 ensures at least two digits
                                 }
                                 else
                                 {
                                     // Handle the case where the numeric part is not valid
-                                    this.txtqid.Text = "Q01";
+                                    this.txtsid.Text = "S01";
                                 }
                             }
                             else
                             {
                                 // Handle the case where there are no records in the table or invalid format
-                                this.txtqid.Text = "Q01";
+                                this.txtsid.Text = "S01";
                             }
                         }
                         else
                         {
                             // Handle the case where there are no records in the table
-                            this.txtqid.Text = "O01";
+                            this.txtsid.Text = "S01";
                         }
                         dr.Close(); // Ensure the data reader is closed
                     }
@@ -138,13 +138,11 @@ namespace Final_Project
             }
         }
 
-
-        private void Sales_Person_Quotation_Load(object sender, EventArgs e)
+        private void Technician_Software_Load(object sender, EventArgs e)
         {
             customercombo();
             productcombo();
-            auto_increment_qutationid();
-
+            auto_increment_serviceid();
         }
 
         private void comboproduct_SelectedIndexChanged(object sender, EventArgs e)
@@ -169,41 +167,6 @@ namespace Final_Project
             con.Close();
         }
 
-        private void calculations_sub()
-        {
-            double price = Convert.ToDouble(this.txtprice.Text);
-            double dicount = Convert.ToDouble(this.txtdiscount.Text);
-            int qty = Convert.ToInt32(this.numaricqunatity.Value);
-
-            double subtotal = price * qty;
-            double subdiscount = dicount * qty;
-
-            this.txtsubdicount.Text = subdiscount.ToString();
-            this.txtsubtotal.Text = subtotal.ToString();
-
-        }
-
-        private void numaricqunatity_ValueChanged(object sender, EventArgs e)
-        {
-            calculations_sub();
-        }
-
-        private void calculations_net()
-        {
-            double subtotal = Convert.ToDouble(this.txtsubtotal.Text);
-            double subdiscount = Convert.ToDouble(this.txtsubdicount.Text);
-
-            double nettotal = Convert.ToDouble(this.txttotalamount.Text);
-            double netdiscount = Convert.ToDouble(this.txttotaldiscount.Text);
-
-            nettotal = nettotal + subtotal;
-            netdiscount = netdiscount + subdiscount;
-            nettotal = nettotal - netdiscount;
-
-            this.txttotalamount.Text = nettotal.ToString();
-            this.txttotaldiscount.Text = netdiscount.ToString();
-        }
-
         private void data_load_to_grid()
         {
             //connection
@@ -214,9 +177,9 @@ namespace Final_Project
             con.Open();
 
             //Load Data to GridView
-            string sql = "SELECT * FROM QuatationConsists WHERE qId=@qid";
+            string sql = "SELECT * FROM ServiceConsists WHERE serviceId=@sid";
             SqlCommand com = new SqlCommand(sql, con);
-            com.Parameters.AddWithValue("@qid", this.txtqid.Text);
+            com.Parameters.AddWithValue("@sid", this.txtsid.Text);
 
             //Data Adaptor
             SqlDataAdapter dap = new SqlDataAdapter(com);
@@ -249,7 +212,7 @@ namespace Final_Project
             con.Open();
 
             //commands
-            string sql2 = "SELECT hardwareProductId FROM HardwareProduct WHERE productId=@productId";
+            string sql2 = "SELECT softwareProductId FROM SoftwareProduct WHERE productId=@productId";
             SqlCommand com2 = new SqlCommand(sql2, con);
             com2.Parameters.AddWithValue("@productId", pid);
 
@@ -263,13 +226,10 @@ namespace Final_Project
             con.Open();
 
             //Command
-            string sql = "INSERT INTO QuatationConsists (qId,hardwareProductId,quantity,subtotal,discount) VALUES(@qid,@hid,@qty,@subtotal,@dis)";
+            string sql = "INSERT INTO ServiceConsists (serviceId,softwareProductId) VALUES(@sid,@sod)";
             SqlCommand com = new SqlCommand(sql, con);
-            com.Parameters.AddWithValue("@qid", this.txtqid.Text);
-            com.Parameters.AddWithValue("@hid", hid);
-            com.Parameters.AddWithValue("@qty", Convert.ToInt32(this.numaricqunatity.Value));
-            com.Parameters.AddWithValue("@dis", this.txtsubdicount.Text);
-            com.Parameters.AddWithValue("@subtotal", this.txtsubtotal.Text);
+            com.Parameters.AddWithValue("@sid", this.txtsid.Text);
+            com.Parameters.AddWithValue("@sod", hid);
 
             //Execute
             int ret = com.ExecuteNonQuery();
@@ -279,123 +239,11 @@ namespace Final_Project
             con.Close();
         }
 
-        private void textbox_clear()
-        {
-            //after clicking btnmark textbox and combobox clear
-
-            this.comboproduct.Text = "";
-            this.numaricqunatity.Value = 0;
-            this.txtprice.Clear();
-            this.txtdiscount.Text = "0";
-            this.txtsubdicount.Text = "";
-            this.txtsubtotal.Text = "";
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            if (this.combocname.Text == "")
-            {
-                MessageBox.Show("Select Customer");
-            }
-            else if (this.comboproduct.Text == "")
-            {
-                MessageBox.Show("Select Product");
-            }
-            else if (this.numaricqunatity.Value == 0)
-            {
-                MessageBox.Show("Quantity Should be more than 0");
-            }
-            else
-            {
-                calculations_net();
-                insert_data_into_QuatationConsists();
-                data_load_to_grid();
-                textbox_clear();
-            }
-        }
+            insert_data_into_QuatationConsists();
+            data_load_to_grid();
 
-        private void inset_datainto_order()
-        {
-            try
-            {
-                // Connection string
-                string cs = @"Data Source=HPNotebook; 
-                      Initial Catalog=DSE_FinalProject; 
-                      Integrated Security=True";
-
-                using (SqlConnection con = new SqlConnection(cs))
-                {
-                    con.Open();
-
-                    // Command to get cusId
-                    string sql1 = "SELECT cusId FROM Customer WHERE cusName=@name";
-                    using (SqlCommand com1 = new SqlCommand(sql1, con))
-                    {
-                        com1.Parameters.AddWithValue("@name", this.combocname.Text);
-
-                        using (SqlDataReader dr = com1.ExecuteReader())
-                        {
-                            if (dr.Read())
-                            {
-                                string cusId = dr.GetValue(0).ToString();
-
-                                dr.Close(); // Ensure the data reader is closed
-
-                                // Command to insert into Order
-                                string sql = "INSERT INTO [Quotation] (qId, esitimatedPrice, dateTime, cusId) " +
-                                             "VALUES (@qid,@totala,@datetime,@cusid)";
-                                using (SqlCommand com = new SqlCommand(sql, con))
-                                {
-                                    com.Parameters.AddWithValue("@qid", this.txtqid.Text);
-                                    com.Parameters.AddWithValue("@datetime", DateTime.Now);
-                                    com.Parameters.AddWithValue("@totala", this.txttotalamount.Text);
-                                    com.Parameters.AddWithValue("@cusid", cusId);
-
-                                    // Execute the insert
-                                    int ret = com.ExecuteNonQuery();
-                                    MessageBox.Show("Number of records Inserted: " + ret, "Information");
-                                }
-                            }
-                            else
-                            {
-                                MessageBox.Show("Customer not found.");
-                            }
-                        }
-                    }
-                }
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show("Something went wrong: " + ex.Message, "Information");
-            }
-        }
-
-        private void textclear_for_save()
-        {
-            this.txtqid.Text = "";
-            this.combocname.Text = "";
-            this.comboproduct.Text = "";
-            this.numaricqunatity.Value = 0;
-            this.txtprice.Clear();
-            this.txtdiscount.Text = "0";
-            this.txtsubdicount.Text = "";
-            this.txtsubtotal.Text = "";
-            this.txttotalamount.Text = "0.00";
-            this.txttotaldiscount.Text = "0.00";
-            this.dataGridView1.DataSource = null;
-        }
-
-        private void btnsavetodatabse_Click(object sender, EventArgs e)
-        {
-            inset_datainto_order();
-            textclear_for_save();
-            auto_increment_qutationid();
-        }
-
-        private void btnclose_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

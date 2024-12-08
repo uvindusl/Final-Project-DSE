@@ -65,7 +65,7 @@ namespace Final_Project
             con.Open();
 
             //commands
-            string sql = "SELECT pName FROM Product";
+            string sql = "SELECT pName FROM Product WHERE pType='Hardware'";
             SqlCommand com = new SqlCommand(sql, con);
 
             //Access Data

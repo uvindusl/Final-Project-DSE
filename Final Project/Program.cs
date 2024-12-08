@@ -16,7 +16,7 @@ namespace Final_Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Sales_Person_Quotation());
+            Application.Run(new Technician_Software());
         }
     }
 }
