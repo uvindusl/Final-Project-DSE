@@ -173,6 +173,7 @@ namespace Final_Project
         private void Admin_Purchase_Order_Load(object sender, EventArgs e)
         {
             //calling methods
+            this.btnsavetodatabse.Enabled = false;
             adminidcombox();
             productcombo();
             suppliercombo();
@@ -396,9 +397,68 @@ namespace Final_Project
 
             this.comboproduct.Text = "";
             this.numaricqunatity.Value = 0;
-            this.txtprice.Clear();
+            this.txtprice.Text = "0";
             this.txtdicount.Text = "0.00";
 
+        }
+
+        private void update_inventory_quantity()
+        {
+            try
+            {
+                // Connection string
+                string cs = @"Data Source=HPNotebook; 
+                      Initial Catalog=DSE_FinalProject; 
+                      Integrated Security=True";
+
+                using (SqlConnection con = new SqlConnection(cs))
+                {
+                    con.Open();
+
+                    // Query to get pQuantity
+                    string sql1 = "SELECT pQuantity FROM InventoryProducts WHERE hardawareProductId=@hid";
+                    using (SqlCommand com1 = new SqlCommand(sql1, con))
+                    {
+                        com1.Parameters.AddWithValue("@hid", hardwareid());
+
+                        using (SqlDataReader dr = com1.ExecuteReader())
+                        {
+                            dr.Read();
+                            int in_qty = Convert.ToInt32(dr.GetValue(0).ToString());
+                            con.Close();
+
+
+                            int newqty = Convert.ToInt32(this.numaricqunatity.Value);
+                            in_qty = in_qty + newqty;
+
+                                con.Open();
+
+                                // Update inventory quantity
+                                string sql = "UPDATE InventoryProducts SET pQuantity=@pq WHERE hardawareProductId=@hid";
+                                using (SqlCommand com = new SqlCommand(sql, con))
+                                {
+                                    com.Parameters.AddWithValue("@hid", hardwareid());
+                                    com.Parameters.AddWithValue("@pq", in_qty);
+
+                                    // Execute the update
+                                    int ret = com.ExecuteNonQuery();
+                                   
+                                }
+
+                                con.Close();
+
+                                
+                            
+
+
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Something went wrong: " + ex.Message, "Information");
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -424,37 +484,217 @@ namespace Final_Project
                 calculate_the_total();
                 data_insetrt_purchaserderconsists();
                 data_load_to_grid();
+                update_inventory_quantity();
                 textbox_clear();
-                btnsavetodatabse.Enabled = true;
+                
             }
             
         }
 
         private void btnclose_Click(object sender, EventArgs e)
         {
-            //truncate thing
-
-            //connection
-            /*string cs = @"Data Source=HPNotebook; 
-            Initial Catalog=DSE_FinalProject; 
-            Integrated Security=True";
-            SqlConnection con = new SqlConnection(cs);
-            con.Open();
-
-            //Load Data to GridView
-            string sql = "TRUNCATE TABLE PurchaseOrderConsists";
-            SqlCommand com = new SqlCommand(sql, con);
-            com.ExecuteNonQuery();
-
-            con.Close();*/
+            
 
             this.Close();
+        }
+
+        private void textclear_for_save()
+        {
+            this.txtdescription.Text = "";
+            this.txtpid.Text = "";
+            this.comboaid.Text = "";
+            this.combosname.Text = "";
+            this.comboproduct.Text = "";
+            this.numaricqunatity.Value = 0;
+            this.txtprice.Text = "0";
+            this.txtdicount.Text = "0";
+            this.txttotalamount.Text = "0";
+            this.txttotaldiscount.Text = "0";
+            this.dataGridView1.DataSource = null;
         }
 
         private void btnsavetodatabse_Click(object sender, EventArgs e)
         {
 
             data_insert_purchaseorder();
+            textclear_for_save();
+            pid_auto_incrment();
+            this.btnsavetodatabse.Enabled = false;
+
+        }
+
+        private string hardwareid()
+        {
+            string hid2 = string.Empty;
+
+            // Connection string
+            string cs = @"Data Source=HPNotebook; 
+                  Initial Catalog=DSE_FinalProject; 
+                  Integrated Security=True";
+
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+                con.Open();
+
+                // Command to get productId
+                string sql1 = "SELECT productId FROM Product WHERE pName=@name";
+                using (SqlCommand com1 = new SqlCommand(sql1, con))
+                {
+                    com1.Parameters.AddWithValue("@name", this.comboproduct.Text);
+
+                    using (SqlDataReader dr1 = com1.ExecuteReader())
+                    {
+                        if (dr1.Read())
+                        {
+                            string pid = dr1.GetValue(0).ToString();
+                            dr1.Close(); // Ensure the data reader is closed
+
+                            // Command to get hardwareProductId
+                            string sql2 = "SELECT hardwareProductId FROM HardwareProduct WHERE productId=@productId";
+                            using (SqlCommand com2 = new SqlCommand(sql2, con))
+                            {
+                                com2.Parameters.AddWithValue("@productId", pid);
+
+                                using (SqlDataReader dr2 = com2.ExecuteReader())
+                                {
+                                    if (dr2.Read())
+                                    {
+                                        hid2 = dr2.GetValue(0).ToString();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            return hid2;
+        }
+
+        private string auto_increment_purchaseInvoiceid()
+        {
+            string rid = string.Empty;
+
+            try
+            {
+                // Connection string
+                string cs = @"Data Source=HPNotebook; 
+                      Initial Catalog=DSE_FinalProject; 
+                      Integrated Security=True";
+
+                using (SqlConnection con = new SqlConnection(cs))
+                {
+                    con.Open();
+
+                    string sql1 = "SELECT MAX(purchaseInvoiceId) FROM [PurchaseInvoice]";
+                    using (SqlCommand cmd = new SqlCommand(sql1, con))
+                    {
+                        using (SqlDataReader dr = cmd.ExecuteReader())
+                        {
+                            if (dr.Read())
+                            {
+                                string maxItemId = dr[0]?.ToString(); // Use the null-conditional operator
+
+                                if (!string.IsNullOrEmpty(maxItemId) && maxItemId.StartsWith("PI"))
+                                {
+                                    // Extract the numeric part after the "SI" prefix
+                                    string numericPart = maxItemId.Substring(2); // Change to 2 to skip the 'SI' prefix
+                                    if (int.TryParse(numericPart, out int maxID))
+                                    {
+                                        // Increment the numeric part
+                                        int newID = maxID + 1;
+                                        // Format the new ID back to string with 'SI' prefix and leading zeros
+                                        rid = "PI" + newID.ToString("D2"); // D2 ensures at least two digits
+                                    }
+                                    else
+                                    {
+                                        // Handle the case where the numeric part is not valid
+                                        rid = "PI01";
+                                    }
+                                }
+                                else
+                                {
+                                    // Handle the case where there are no records in the table or invalid format
+                                    rid = "PI01";
+                                }
+                            }
+                            else
+                            {
+                                // Handle the case where there are no records in the table
+                                rid = "PI01";
+                            }
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Something went wrong: " + ex.Message, "Information");
+            }
+
+            return rid;
+        }
+
+        private void inset_datainto_purchaseinvoice()
+        {
+            try
+            {
+                // Connection string
+                string cs = @"Data Source=HPNotebook; 
+                      Initial Catalog=DSE_FinalProject; 
+                      Integrated Security=True";
+
+                using (SqlConnection con = new SqlConnection(cs))
+                {
+                    con.Open();
+
+                    // Command to get cusId
+                    string sql1 = "SELECT supId FROM Supplier WHERE supName=@name";
+                    using (SqlCommand com1 = new SqlCommand(sql1, con))
+                    {
+                        com1.Parameters.AddWithValue("@name", this.combosname.Text);
+
+                        using (SqlDataReader dr = com1.ExecuteReader())
+                        {
+                            if (dr.Read())
+                            {
+                                string sid = dr.GetValue(0).ToString();
+
+                                dr.Close(); // Ensure the data reader is closed
+
+                                // Command to insert into Order
+                                string sql = "INSERT INTO [PurchaseInvoice] (purchaseInvoiceId, subDescription, purchaseOrderId, supId ) " +
+                                             "VALUES (@piid,@sd,@pid , @sid)";
+                                using (SqlCommand com = new SqlCommand(sql, con))
+                                {
+                                    com.Parameters.AddWithValue("@piid", auto_increment_purchaseInvoiceid());
+                                    com.Parameters.AddWithValue("@sd", this.txtdescription.Text);
+                                    com.Parameters.AddWithValue("@pid", this.txtpid.Text);
+                                    com.Parameters.AddWithValue("@sid", sid);
+
+                                    // Execute the insert
+                                    int ret = com.ExecuteNonQuery();
+                                    MessageBox.Show("Number of records Inserted: " + ret, "Information");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Customer not found.");
+                            }
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Something went wrong: " + ex.Message, "Information");
+            }
+        }
+
+        private void btnprint_Click(object sender, EventArgs e)
+        {
+            inset_datainto_purchaseinvoice();
+            this.btnsavetodatabse.Enabled = true;
         }
     }
 }

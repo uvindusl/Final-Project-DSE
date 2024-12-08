@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnsavetodatabse = new System.Windows.Forms.Button();
             this.btnclose = new System.Windows.Forms.Button();
             this.txttotaldiscount = new System.Windows.Forms.TextBox();
@@ -62,11 +64,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtdiscount = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtdescription = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numaricqunatity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -139,16 +144,6 @@
             this.panel2.Size = new System.Drawing.Size(253, 10);
             this.panel2.TabIndex = 1;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::Final_Project.Properties.Resources.WhatsApp_Image_2024_11_07_at_09_30_23_20f03f32_1;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(39, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(205, 86);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnsavetodatabse
             // 
             this.btnsavetodatabse.Location = new System.Drawing.Point(1197, 570);
@@ -207,9 +202,33 @@
             // 
             // dataGridView1
             // 
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridView1.Location = new System.Drawing.Point(878, 69);
             this.dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridView1.Size = new System.Drawing.Size(535, 397);
             this.dataGridView1.TabIndex = 54;
             // 
@@ -226,6 +245,8 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.panel3.Controls.Add(this.txtdescription);
+            this.panel3.Controls.Add(this.label18);
             this.panel3.Controls.Add(this.txtdiscount);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.txtsubtotal);
@@ -245,12 +266,12 @@
             this.panel3.Controls.Add(this.label9);
             this.panel3.Location = new System.Drawing.Point(328, 69);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(535, 397);
+            this.panel3.Size = new System.Drawing.Size(535, 477);
             this.panel3.TabIndex = 52;
             // 
             // numaricqunatity
             // 
-            this.numaricqunatity.Location = new System.Drawing.Point(250, 243);
+            this.numaricqunatity.Location = new System.Drawing.Point(248, 308);
             this.numaricqunatity.Name = "numaricqunatity";
             this.numaricqunatity.Size = new System.Drawing.Size(130, 20);
             this.numaricqunatity.TabIndex = 38;
@@ -258,7 +279,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(441, 360);
+            this.button1.Location = new System.Drawing.Point(428, 434);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 37;
@@ -269,7 +290,7 @@
             // combocname
             // 
             this.combocname.FormattingEnabled = true;
-            this.combocname.Location = new System.Drawing.Point(250, 78);
+            this.combocname.Location = new System.Drawing.Point(248, 143);
             this.combocname.Name = "combocname";
             this.combocname.Size = new System.Drawing.Size(186, 21);
             this.combocname.TabIndex = 36;
@@ -285,7 +306,7 @@
             // 
             // txtsubdicount
             // 
-            this.txtsubdicount.Location = new System.Drawing.Point(248, 283);
+            this.txtsubdicount.Location = new System.Drawing.Point(246, 348);
             this.txtsubdicount.Name = "txtsubdicount";
             this.txtsubdicount.ReadOnly = true;
             this.txtsubdicount.Size = new System.Drawing.Size(188, 20);
@@ -294,7 +315,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(76, 286);
+            this.label15.Location = new System.Drawing.Point(74, 351);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(71, 13);
             this.label15.TabIndex = 32;
@@ -311,7 +332,7 @@
             // comboproduct
             // 
             this.comboproduct.FormattingEnabled = true;
-            this.comboproduct.Location = new System.Drawing.Point(248, 123);
+            this.comboproduct.Location = new System.Drawing.Point(246, 188);
             this.comboproduct.Name = "comboproduct";
             this.comboproduct.Size = new System.Drawing.Size(188, 21);
             this.comboproduct.TabIndex = 31;
@@ -319,7 +340,7 @@
             // 
             // txtprice
             // 
-            this.txtprice.Location = new System.Drawing.Point(248, 167);
+            this.txtprice.Location = new System.Drawing.Point(246, 232);
             this.txtprice.Name = "txtprice";
             this.txtprice.ReadOnly = true;
             this.txtprice.Size = new System.Drawing.Size(188, 20);
@@ -328,7 +349,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(76, 170);
+            this.label13.Location = new System.Drawing.Point(74, 235);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(31, 13);
             this.label13.TabIndex = 22;
@@ -337,7 +358,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(78, 245);
+            this.label12.Location = new System.Drawing.Point(76, 310);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(46, 13);
             this.label12.TabIndex = 21;
@@ -346,7 +367,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(78, 81);
+            this.label11.Location = new System.Drawing.Point(76, 146);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(82, 13);
             this.label11.TabIndex = 20;
@@ -355,7 +376,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(76, 126);
+            this.label9.Location = new System.Drawing.Point(74, 191);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(44, 13);
             this.label9.TabIndex = 18;
@@ -369,10 +390,11 @@
             this.btnprint.TabIndex = 17;
             this.btnprint.Text = "Print";
             this.btnprint.UseVisualStyleBackColor = true;
+            this.btnprint.Click += new System.EventHandler(this.btnprint_Click);
             // 
             // txtsubtotal
             // 
-            this.txtsubtotal.Location = new System.Drawing.Point(248, 328);
+            this.txtsubtotal.Location = new System.Drawing.Point(246, 393);
             this.txtsubtotal.Name = "txtsubtotal";
             this.txtsubtotal.ReadOnly = true;
             this.txtsubtotal.Size = new System.Drawing.Size(188, 20);
@@ -381,7 +403,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(78, 331);
+            this.label5.Location = new System.Drawing.Point(76, 396);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 13);
             this.label5.TabIndex = 39;
@@ -389,7 +411,7 @@
             // 
             // txtdiscount
             // 
-            this.txtdiscount.Location = new System.Drawing.Point(248, 207);
+            this.txtdiscount.Location = new System.Drawing.Point(246, 272);
             this.txtdiscount.Name = "txtdiscount";
             this.txtdiscount.Size = new System.Drawing.Size(188, 20);
             this.txtdiscount.TabIndex = 42;
@@ -398,11 +420,38 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(76, 210);
+            this.label6.Location = new System.Drawing.Point(74, 275);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(97, 13);
             this.label6.TabIndex = 41;
             this.label6.Text = "Discount (Optional)";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Final_Project.Properties.Resources.WhatsApp_Image_2024_11_07_at_09_30_23_20f03f32_1;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(39, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(205, 86);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // txtdescription
+            // 
+            this.txtdescription.Location = new System.Drawing.Point(246, 66);
+            this.txtdescription.Multiline = true;
+            this.txtdescription.Name = "txtdescription";
+            this.txtdescription.Size = new System.Drawing.Size(236, 66);
+            this.txtdescription.TabIndex = 50;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(74, 69);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(108, 13);
+            this.label18.TabIndex = 49;
+            this.label18.Text = "Description (Optional)";
             // 
             // Sales_Person_POS
             // 
@@ -425,11 +474,11 @@
             this.Load += new System.EventHandler(this.Sales_Person_POS_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numaricqunatity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -470,5 +519,7 @@
         private System.Windows.Forms.Button btnprint;
         private System.Windows.Forms.TextBox txtdiscount;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtdescription;
+        private System.Windows.Forms.Label label18;
     }
 }

@@ -141,6 +141,7 @@ namespace Final_Project
 
         private void Sales_Person_POS_Load(object sender, EventArgs e)
         {
+            this.btnsavetodatabse.Enabled = false;
             auto_increment_orderid();
             customercombo();
             productcombo();
@@ -502,6 +503,7 @@ namespace Final_Project
 
         private void textclear_for_save()
         {
+            this.txtdescription.Text = "";
             this.txtoid.Text = "";
             this.combocname.Text = "";
             this.comboproduct.Text = "";
@@ -521,6 +523,132 @@ namespace Final_Project
             inset_datainto_order();
             textclear_for_save();
             auto_increment_orderid();
+        }
+
+        private string auto_increment_productInvoiceid()
+        {
+            string rid = string.Empty;
+
+            try
+            {
+                // Connection string
+                string cs = @"Data Source=HPNotebook; 
+                      Initial Catalog=DSE_FinalProject; 
+                      Integrated Security=True";
+
+                using (SqlConnection con = new SqlConnection(cs))
+                {
+                    con.Open();
+
+                    string sql1 = "SELECT MAX(pInvoiceId) FROM [ProductInvoice]";
+                    using (SqlCommand cmd = new SqlCommand(sql1, con))
+                    {
+                        using (SqlDataReader dr = cmd.ExecuteReader())
+                        {
+                            if (dr.Read())
+                            {
+                                string maxItemId = dr[0]?.ToString(); // Use the null-conditional operator
+
+                                if (!string.IsNullOrEmpty(maxItemId) && maxItemId.StartsWith("PR"))
+                                {
+                                    // Extract the numeric part after the "SI" prefix
+                                    string numericPart = maxItemId.Substring(2); // Change to 2 to skip the 'SI' prefix
+                                    if (int.TryParse(numericPart, out int maxID))
+                                    {
+                                        // Increment the numeric part
+                                        int newID = maxID + 1;
+                                        // Format the new ID back to string with 'SI' prefix and leading zeros
+                                        rid = "PR" + newID.ToString("D2"); // D2 ensures at least two digits
+                                    }
+                                    else
+                                    {
+                                        // Handle the case where the numeric part is not valid
+                                        rid = "PR01";
+                                    }
+                                }
+                                else
+                                {
+                                    // Handle the case where there are no records in the table or invalid format
+                                    rid = "PR01";
+                                }
+                            }
+                            else
+                            {
+                                // Handle the case where there are no records in the table
+                                rid = "PR01";
+                            }
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Something went wrong: " + ex.Message, "Information");
+            }
+
+            return rid;
+        }
+
+        private void inset_datainto_productinvoice()
+        {
+            try
+            {
+                // Connection string
+                string cs = @"Data Source=HPNotebook; 
+                      Initial Catalog=DSE_FinalProject; 
+                      Integrated Security=True";
+
+                using (SqlConnection con = new SqlConnection(cs))
+                {
+                    con.Open();
+
+                    // Command to get cusId
+                    string sql1 = "SELECT cusId FROM Customer WHERE cusName=@name";
+                    using (SqlCommand com1 = new SqlCommand(sql1, con))
+                    {
+                        com1.Parameters.AddWithValue("@name", this.combocname.Text);
+
+                        using (SqlDataReader dr = com1.ExecuteReader())
+                        {
+                            if (dr.Read())
+                            {
+                                string cid = dr.GetValue(0).ToString();
+
+                                dr.Close(); // Ensure the data reader is closed
+
+                                // Command to insert into Order
+                                string sql = "INSERT INTO [ProductInvoice] (pInvoiceId, subDescription, orderId, cusId ) " +
+                                             "VALUES (@prid,@sd,@oid , @cid)";
+                                using (SqlCommand com = new SqlCommand(sql, con))
+                                {
+                                    com.Parameters.AddWithValue("@prid", auto_increment_productInvoiceid());
+                                    com.Parameters.AddWithValue("@sd", this.txtdescription.Text);
+                                    com.Parameters.AddWithValue("@oid", this.txtoid.Text);
+                                    com.Parameters.AddWithValue("@cid", cid);
+
+                                    // Execute the insert
+                                    int ret = com.ExecuteNonQuery();
+                                    MessageBox.Show("Number of records Inserted: " + ret, "Information");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Customer not found.");
+                            }
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Something went wrong: " + ex.Message, "Information");
+            }
+        }
+
+        private void btnprint_Click(object sender, EventArgs e)
+        {
+            inset_datainto_productinvoice();
+            this.btnsavetodatabse.Enabled = true;
         }
     }
 }

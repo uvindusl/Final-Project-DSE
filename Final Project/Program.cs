@@ -16,7 +16,7 @@ namespace Final_Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Admin_Return_Purchase_Order());
+            Application.Run(new Sales_Person_POS());
         }
     }
 }
