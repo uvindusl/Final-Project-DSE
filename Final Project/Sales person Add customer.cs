@@ -26,7 +26,7 @@ namespace Final_Project
             {
                 //Create a connection
 
-                string cs = "Data Source = LAPTOP-DOH91PI2;Initial Catalog = DSE_FinalProject; Integrated Security = True ";
+                string cs = @"Data Source=HPNotebook; Initial Catalog=DSE_FinalProject; Integrated Security=True";
                 SqlConnection con = new SqlConnection(cs);
 
                 con.Open();
@@ -122,7 +122,7 @@ namespace Final_Project
                  {*/
                 //Create a connection
 
-                string cs = "Data Source = LAPTOP-DOH91PI2;Initial Catalog = DSE_FinalProject; Integrated Security = True ";
+                string cs = @"Data Source=HPNotebook; Initial Catalog=DSE_FinalProject; Integrated Security=True";
                 SqlConnection con = new SqlConnection(cs);
 
                 con.Open();
