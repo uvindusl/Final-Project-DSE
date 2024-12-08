@@ -64,6 +64,12 @@
     <Compile Include="Admin Create Account.Designer.cs">
       <DependentUpon>Admin Create Account.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin Dashboard.Designer.cs">
+      <DependentUpon>Admin Dashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin Purchase Order.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +210,12 @@
     <Compile Include="SP View Software Pd.Designer.cs">
       <DependentUpon>SP View Software Pd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Technicain Search Sold Hardware Product.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Technicain Search Sold Hardware Product.Designer.cs">
+      <DependentUpon>Technicain Search Sold Hardware Product.cs</DependentUpon>
+    </Compile>
     <Compile Include="Technician  Jobnotes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,6 +227,12 @@
     </Compile>
     <Compile Include="Technician Add Customer.Designer.cs">
       <DependentUpon>Technician Add Customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Technician Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Technician Dashboard.Designer.cs">
+      <DependentUpon>Technician Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Technician Place service orders.cs">
       <SubType>Form</SubType>
@@ -234,6 +252,12 @@
     <Compile Include="Technician View,search Job note.Designer.cs">
       <DependentUpon>Technician View,search Job note.cs</DependentUpon>
     </Compile>
+    <Compile Include="View Working Hours.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View Working Hours.Designer.cs">
+      <DependentUpon>View Working Hours.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Admin Add employees.resx">
       <DependentUpon>Admin Add employees.cs</DependentUpon>
     </EmbeddedResource>
@@ -242,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin Create Account.resx">
       <DependentUpon>Admin Create Account.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin Dashboard.resx">
+      <DependentUpon>Admin Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin Purchase Order.resx">
       <DependentUpon>Admin Purchase Order.cs</DependentUpon>
@@ -322,11 +349,17 @@
     <EmbeddedResource Include="SP View Software Pd.resx">
       <DependentUpon>SP View Software Pd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Technicain Search Sold Hardware Product.resx">
+      <DependentUpon>Technicain Search Sold Hardware Product.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Technician  Jobnotes.resx">
       <DependentUpon>Technician  Jobnotes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Technician Add Customer.resx">
       <DependentUpon>Technician Add Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Technician Dashboard.resx">
+      <DependentUpon>Technician Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Technician Place service orders.resx">
       <DependentUpon>Technician Place service orders.cs</DependentUpon>
@@ -336,6 +369,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Technician View,search Job note.resx">
       <DependentUpon>Technician View,search Job note.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View Working Hours.resx">
+      <DependentUpon>View Working Hours.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
