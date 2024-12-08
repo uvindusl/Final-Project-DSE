@@ -11,18 +11,18 @@ using System.Windows.Forms;
 
 namespace Final_Project
 {
-    public partial class Admin_View_Software : Form
+    public partial class Admin_View_Products_1 : Form
     {
-        public Admin_View_Software()
+        public Admin_View_Products_1()
         {
             InitializeComponent();
         }
 
-        private void Admin_View_Software_Load(object sender, EventArgs e)
+        private void Admin_View_Products_1_Load(object sender, EventArgs e)
         {
-            combospid.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            combospid.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            combospid.AutoCompleteSource = AutoCompleteSource.ListItems;
+            combospname.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            combospname.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            combospname.AutoCompleteSource = AutoCompleteSource.ListItems;
 
             //connection
             string cs = @"Data Source=HPNotebook; 
@@ -32,21 +32,21 @@ namespace Final_Project
             con.Open();
 
             //commands
-            string sql = "SELECT softwareProductId From SoftwareProduct";
+            string sql = "SELECT pName From Product";
             SqlCommand com = new SqlCommand(sql, con);
 
             //Access Data
             SqlDataReader dr = com.ExecuteReader();
             while (dr.Read())
             {
-                this.combospid.Items.Add(dr.GetValue(0));
+                this.combospname.Items.Add(dr.GetValue(0));
             }
 
             con.Close();
 
             con.Open();
             //commands
-            string sql2 = "SELECT * From SoftwareProduct";
+            string sql2 = "SELECT * From Product";
             SqlCommand com2 = new SqlCommand(sql2, con);
 
             //access data using data adapter method
@@ -61,11 +61,11 @@ namespace Final_Project
             con.Close();
         }
 
-        private void combospid_SelectedIndexChanged(object sender, EventArgs e)
+        private void combospid_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            combospid.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            combospid.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            combospid.AutoCompleteSource = AutoCompleteSource.ListItems;
+            combospname.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            combospname.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            combospname.AutoCompleteSource = AutoCompleteSource.ListItems;
 
             //connection
             string cs = @"Data Source=HPNotebook; 
@@ -75,18 +75,19 @@ namespace Final_Project
             con.Open();
 
             //commands
-            string sql = "SELECT * FROM SoftwareProduct WHERE softwareProductId=@id";
+            string sql = "SELECT * FROM Product WHERE pName=@name";
             SqlCommand com = new SqlCommand(sql, con);
-            com.Parameters.AddWithValue("@id", this.combospid.Text);
+            com.Parameters.AddWithValue("@name", this.combospname.Text);
 
             //access data using data reader method
             SqlDataReader dr = com.ExecuteReader();
             dr.Read();
-            this.txtversion.Text = dr.GetValue(1).ToString();
-            this.txtlicensetype.Text = dr.GetValue(2).ToString();
-            this.txtplatform.Text = dr.GetValue(3).ToString();
-            this.txtfilesize.Text = dr.GetValue(4).ToString();
-            this.txtsperiod.Text = dr.GetValue(5).ToString();
+            this.txtpid.Text = dr.GetValue(0).ToString();
+            this.txtdescription.Text = dr.GetValue(2).ToString();
+            this.txttype.Text = dr.GetValue(3).ToString();
+            this.txtprice.Text = dr.GetValue(4).ToString();
+            this.txtaid.Text = dr.GetValue(5).ToString();
+            this.txtsprice.Text = dr.GetValue(6).ToString();
 
             con.Close();
         }
