@@ -76,11 +76,23 @@
     <Compile Include="Admin View Purchase Order.Designer.cs">
       <DependentUpon>Admin View Purchase Order.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin view service.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin view service.Designer.cs">
+      <DependentUpon>Admin view service.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin View,Search orders.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Admin View,Search orders.Designer.cs">
       <DependentUpon>Admin View,Search orders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin View,Search return Ordes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin View,Search return Ordes.Designer.cs">
+      <DependentUpon>Admin View,Search return Ordes.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -120,6 +132,12 @@
     <Compile Include="Technician View Hardware Product.Designer.cs">
       <DependentUpon>Technician View Hardware Product.cs</DependentUpon>
     </Compile>
+    <Compile Include="Technician View,search Job note.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Technician View,search Job note.Designer.cs">
+      <DependentUpon>Technician View,search Job note.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Admin Purchase Order.resx">
       <DependentUpon>Admin Purchase Order.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,8 +153,14 @@
     <EmbeddedResource Include="Admin View Purchase Order.resx">
       <DependentUpon>Admin View Purchase Order.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin view service.resx">
+      <DependentUpon>Admin view service.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin View,Search orders.resx">
       <DependentUpon>Admin View,Search orders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin View,Search return Ordes.resx">
+      <DependentUpon>Admin View,Search return Ordes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -165,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Technician View Hardware Product.resx">
       <DependentUpon>Technician View Hardware Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Technician View,search Job note.resx">
+      <DependentUpon>Technician View,search Job note.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
