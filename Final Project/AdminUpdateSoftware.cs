@@ -22,6 +22,11 @@ namespace Final_Project
         int subscriptionperiod;
         double price, sellingprice, filesize;
 
+        private void BtnCustomerForm_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void deletebtn_Click(object sender, EventArgs e)
         {
             try

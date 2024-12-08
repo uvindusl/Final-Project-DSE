@@ -168,6 +168,7 @@
             this.BtnCustomerForm.Text = "Customer";
             this.BtnCustomerForm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnCustomerForm.UseVisualStyleBackColor = true;
+            this.BtnCustomerForm.Click += new System.EventHandler(this.BtnCustomerForm_Click);
             // 
             // btnEmployeeForm
             // 

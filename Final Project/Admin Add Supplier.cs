@@ -176,5 +176,60 @@ namespace Final_Project
         {
             idAutoincrement();
         }
+
+        private void btnEmployeeForm_Click(object sender, EventArgs e)
+        {
+            Admin_Add_employees aae = new Admin_Add_employees();
+            aae.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AdminUpdateCustomer aduc = new AdminUpdateCustomer();
+            aduc.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Admin_Add_Products adap = new Admin_Add_Products();
+            adap.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Admin_view_Product_inventory advi = new Admin_view_Product_inventory();
+            advi.Show();
+            this.Hide();
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Admin_Purchase_Order admin_Purchase_Order = new Admin_Purchase_Order();
+            admin_Purchase_Order.Show();
+            this.Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Admin_View_Search_orders admin_View_Search_Orders = new Admin_View_Search_orders();
+            admin_View_Search_Orders.Show();
+            this.Hide();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            AdminMakePaysheet admin_MakePaysheet = new AdminMakePaysheet();
+            admin_MakePaysheet.Show();
+            this.Hide();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
