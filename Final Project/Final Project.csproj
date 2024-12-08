@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin Add employees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin Add employees.Designer.cs">
+      <DependentUpon>Admin Add employees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Add Supplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin Add Supplier.Designer.cs">
+      <DependentUpon>Admin Add Supplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Create Account.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin Create Account.Designer.cs">
+      <DependentUpon>Admin Create Account.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin Purchase Order.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +112,60 @@
     <Compile Include="Admin View,Search return Ordes.Designer.cs">
       <DependentUpon>Admin View,Search return Ordes.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminMakePaysheet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminMakePaysheet.Designer.cs">
+      <DependentUpon>AdminMakePaysheet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminSetConfigurableAlerts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminSetConfigurableAlerts.Designer.cs">
+      <DependentUpon>AdminSetConfigurableAlerts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUpdateCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminUpdateCustomer.Designer.cs">
+      <DependentUpon>AdminUpdateCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUpdateEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminUpdateEmployee.Designer.cs">
+      <DependentUpon>AdminUpdateEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUpdateEmployeeLeaves.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminUpdateEmployeeLeaves.Designer.cs">
+      <DependentUpon>AdminUpdateEmployeeLeaves.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUpdateHardware.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminUpdateHardware.Designer.cs">
+      <DependentUpon>AdminUpdateHardware.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUpdateSoftware.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminUpdateSoftware.Designer.cs">
+      <DependentUpon>AdminUpdateSoftware.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUpdateSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminUpdateSupplier.Designer.cs">
+      <DependentUpon>AdminUpdateSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Add_Products.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_Add_Products.Designer.cs">
+      <DependentUpon>Admin_Add_Products.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +174,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sales person Add customer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales person Add customer.Designer.cs">
+      <DependentUpon>Sales person Add customer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sales Person POS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,11 +192,29 @@
     <Compile Include="Sales Person Quotation.Designer.cs">
       <DependentUpon>Sales Person Quotation.cs</DependentUpon>
     </Compile>
+    <Compile Include="SalesPersonDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesPersonDashboard.Designer.cs">
+      <DependentUpon>SalesPersonDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="SP View Software Pd.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SP View Software Pd.Designer.cs">
       <DependentUpon>SP View Software Pd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Technician  Jobnotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Technician  Jobnotes.Designer.cs">
+      <DependentUpon>Technician  Jobnotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Technician Add Customer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Technician Add Customer.Designer.cs">
+      <DependentUpon>Technician Add Customer.cs</DependentUpon>
     </Compile>
     <Compile Include="Technician Place service orders.cs">
       <SubType>Form</SubType>
@@ -138,6 +234,15 @@
     <Compile Include="Technician View,search Job note.Designer.cs">
       <DependentUpon>Technician View,search Job note.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Admin Add employees.resx">
+      <DependentUpon>Admin Add employees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin Add Supplier.resx">
+      <DependentUpon>Admin Add Supplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin Create Account.resx">
+      <DependentUpon>Admin Create Account.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin Purchase Order.resx">
       <DependentUpon>Admin Purchase Order.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +267,33 @@
     <EmbeddedResource Include="Admin View,Search return Ordes.resx">
       <DependentUpon>Admin View,Search return Ordes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminMakePaysheet.resx">
+      <DependentUpon>AdminMakePaysheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminSetConfigurableAlerts.resx">
+      <DependentUpon>AdminSetConfigurableAlerts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminUpdateCustomer.resx">
+      <DependentUpon>AdminUpdateCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminUpdateEmployee.resx">
+      <DependentUpon>AdminUpdateEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminUpdateEmployeeLeaves.resx">
+      <DependentUpon>AdminUpdateEmployeeLeaves.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminUpdateHardware.resx">
+      <DependentUpon>AdminUpdateHardware.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminUpdateSoftware.resx">
+      <DependentUpon>AdminUpdateSoftware.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminUpdateSupplier.resx">
+      <DependentUpon>AdminUpdateSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_Add_Products.resx">
+      <DependentUpon>Admin_Add_Products.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,14 +307,26 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Sales person Add customer.resx">
+      <DependentUpon>Sales person Add customer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Sales Person POS.resx">
       <DependentUpon>Sales Person POS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sales Person Quotation.resx">
       <DependentUpon>Sales Person Quotation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SalesPersonDashboard.resx">
+      <DependentUpon>SalesPersonDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SP View Software Pd.resx">
       <DependentUpon>SP View Software Pd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Technician  Jobnotes.resx">
+      <DependentUpon>Technician  Jobnotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Technician Add Customer.resx">
+      <DependentUpon>Technician Add Customer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Technician Place service orders.resx">
       <DependentUpon>Technician Place service orders.cs</DependentUpon>
