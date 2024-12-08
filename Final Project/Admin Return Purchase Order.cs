@@ -175,6 +175,7 @@ namespace Final_Project
             productcombo();
             suppliercombo();
             rid_auto_increment();
+            this.btnsavetodatabse.Enabled = false;
         }
 
         private void comboproduct_SelectedIndexChanged(object sender, EventArgs e)
@@ -280,7 +281,7 @@ namespace Final_Project
 
             this.comboproduct.Text = "";
             this.numaricqunatity.Value = 0;
-            this.txtprice.Clear();
+            this.txtprice.Text = "0";
             this.lableremaining.Text = "";
             
         }
@@ -404,9 +405,24 @@ namespace Final_Project
             }
         }
 
+        private void textclear_for_save()
+        {
+            this.comboaid.Text = "";
+            this.txtroid.Text = "";
+            this.combosname.Text = "";
+            this.txtdescription.Text = "";
+            this.comboproduct.Text = "";
+            this.txtprice.Text = "0";
+            this.txttotalamount.Text = "";
+            this.dataGridView1.DataSource = null;
+        }
+
         private void btnsavetodatabse_Click(object sender, EventArgs e)
         {
+            
             data_insert_purchaseorder();
+            textclear_for_save();
+            rid_auto_increment();
         }
 
         private void Insert_inventory_quntity()
@@ -433,7 +449,6 @@ namespace Final_Project
 
         private void numaricqunatity_ValueChanged(object sender, EventArgs e)
         {
-
             // Connection string
             string cs = @"Data Source=HPNotebook; 
                   Initial Catalog=DSE_FinalProject; 
@@ -444,31 +459,41 @@ namespace Final_Project
                 con.Open();
 
                 // Query to get pQuantity
-                string sql3 = "SELECT pQuantity FROM InventoryProducts WHERE hardawareProductId=@hid";
-                using (SqlCommand com3 = new SqlCommand(sql3, con))
+                string sql1 = "SELECT pQuantity FROM InventoryProducts WHERE hardawareProductId=@hid";
+                using (SqlCommand com1 = new SqlCommand(sql1, con))
                 {
-                    com3.Parameters.AddWithValue("@hid", hardwareid());
+                    com1.Parameters.AddWithValue("@hid", hardwareid());
 
-                    using (SqlDataReader dr3 = com3.ExecuteReader())
+                    using (SqlDataReader dr = com1.ExecuteReader())
                     {
-                        if (dr3.Read())
+                        if (dr.Read())
                         {
-                            int qty = Convert.ToInt32(dr3.GetValue(0).ToString());
+                            int in_qty = Convert.ToInt32(dr.GetValue(0).ToString());
 
-                            int currentqty = Convert.ToInt32(this.numaricqunatity.Value);
+                            if (in_qty == 0)
+                            {
+                                // Show message if inventory quantity is 0
+                                MessageBox.Show("Product Out Of Stock!!!");
+                                textbox_clear();
+                                return;
+                            }
+                            else
+                            {
+                                int currentqty = Convert.ToInt32(this.numaricqunatity.Value);
 
-                            qty = qty - currentqty;
-                            this.lableremaining.Text = qty.ToString();
+                                in_qty -= currentqty;
+                                this.lableremaining.Text = in_qty.ToString();
+                            }
                         }
-                        else
-                        {
-                            // Handle case where no data is returned
-                            MessageBox.Show("Data Insert Successfully");
-                        }
+                        
                     }
                 }
             }
         }
+
+
+
+
 
 
         private string hardwareid()
@@ -519,5 +544,130 @@ namespace Final_Project
             return hid2;
         }
 
+        private string auto_increment_ReturnInvoiceid()
+        {
+            string rid = string.Empty;
+
+            try
+            {
+                // Connection string
+                string cs = @"Data Source=HPNotebook; 
+                      Initial Catalog=DSE_FinalProject; 
+                      Integrated Security=True";
+
+                using (SqlConnection con = new SqlConnection(cs))
+                {
+                    con.Open();
+
+                    string sql1 = "SELECT MAX(returnInvoiceId) FROM [ReturnInvoice]";
+                    using (SqlCommand cmd = new SqlCommand(sql1, con))
+                    {
+                        using (SqlDataReader dr = cmd.ExecuteReader())
+                        {
+                            if (dr.Read())
+                            {
+                                string maxItemId = dr[0]?.ToString(); // Use the null-conditional operator
+
+                                if (!string.IsNullOrEmpty(maxItemId) && maxItemId.StartsWith("RI"))
+                                {
+                                    // Extract the numeric part after the "SI" prefix
+                                    string numericPart = maxItemId.Substring(2); // Change to 2 to skip the 'SI' prefix
+                                    if (int.TryParse(numericPart, out int maxID))
+                                    {
+                                        // Increment the numeric part
+                                        int newID = maxID + 1;
+                                        // Format the new ID back to string with 'SI' prefix and leading zeros
+                                        rid = "RI" + newID.ToString("D2"); // D2 ensures at least two digits
+                                    }
+                                    else
+                                    {
+                                        // Handle the case where the numeric part is not valid
+                                        rid = "RI01";
+                                    }
+                                }
+                                else
+                                {
+                                    // Handle the case where there are no records in the table or invalid format
+                                    rid = "RI01";
+                                }
+                            }
+                            else
+                            {
+                                // Handle the case where there are no records in the table
+                                rid = "RI01";
+                            }
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Something went wrong: " + ex.Message, "Information");
+            }
+
+            return rid;
+        }
+
+        private void inset_datainto_retunrinvoice()
+        {
+            try
+            {
+                // Connection string
+                string cs = @"Data Source=HPNotebook; 
+                      Initial Catalog=DSE_FinalProject; 
+                      Integrated Security=True";
+
+                using (SqlConnection con = new SqlConnection(cs))
+                {
+                    con.Open();
+
+                    // Command to get cusId
+                    string sql1 = "SELECT supId FROM Supplier WHERE supName=@name";
+                    using (SqlCommand com1 = new SqlCommand(sql1, con))
+                    {
+                        com1.Parameters.AddWithValue("@name", this.combosname.Text);
+
+                        using (SqlDataReader dr = com1.ExecuteReader())
+                        {
+                            if (dr.Read())
+                            {
+                                string sid = dr.GetValue(0).ToString();
+
+                                dr.Close(); // Ensure the data reader is closed
+
+                                // Command to insert into Order
+                                string sql = "INSERT INTO [ReturnInvoice] (returnInvoiceId, subDescription, returnOrderId, supId ) " +
+                                             "VALUES (@riid,@sd,@rid , @sid)";
+                                using (SqlCommand com = new SqlCommand(sql, con))
+                                {
+                                    com.Parameters.AddWithValue("@riid", auto_increment_ReturnInvoiceid());
+                                    com.Parameters.AddWithValue("@sd", this.txtdescription.Text);
+                                    com.Parameters.AddWithValue("@rid", this.txtroid.Text);
+                                    com.Parameters.AddWithValue("@sid", sid);
+
+                                    // Execute the insert
+                                    int ret = com.ExecuteNonQuery();
+                                    MessageBox.Show("Number of records Inserted: " + ret, "Information");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Customer not found.");
+                            }
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Something went wrong: " + ex.Message, "Information");
+            }
+        }
+
+        private void btnprint_Click(object sender, EventArgs e)
+        {
+            inset_datainto_retunrinvoice();
+            this.btnsavetodatabse.Enabled = true;
+        }
     }
 }
