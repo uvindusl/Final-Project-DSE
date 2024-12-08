@@ -102,11 +102,11 @@
     <Compile Include="SP View Software Pd.Designer.cs">
       <DependentUpon>SP View Software Pd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Technician Software.cs">
+    <Compile Include="Technician Place service orders.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Technician Software.Designer.cs">
-      <DependentUpon>Technician Software.cs</DependentUpon>
+    <Compile Include="Technician Place service orders.Designer.cs">
+      <DependentUpon>Technician Place service orders.cs</DependentUpon>
     </Compile>
     <Compile Include="Technician View Hardware Product.cs">
       <SubType>Form</SubType>
@@ -151,8 +151,8 @@
     <EmbeddedResource Include="SP View Software Pd.resx">
       <DependentUpon>SP View Software Pd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Technician Software.resx">
-      <DependentUpon>Technician Software.cs</DependentUpon>
+    <EmbeddedResource Include="Technician Place service orders.resx">
+      <DependentUpon>Technician Place service orders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Technician View Hardware Product.resx">
       <DependentUpon>Technician View Hardware Product.cs</DependentUpon>
