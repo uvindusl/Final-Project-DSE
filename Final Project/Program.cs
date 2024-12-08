@@ -18,7 +18,7 @@ namespace Final_Project
                 SetProcessDPIAware();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Sales_Person_Quotation());
+            Application.Run(new SP_View_Software_Pd());
         }
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         private static extern bool SetProcessDPIAware();
