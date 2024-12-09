@@ -94,6 +94,7 @@ namespace Final_Project
 
         private void label1_Click(object sender, EventArgs e)
         {
+            //dashboard
             Admin_Dashboard ad = new Admin_Dashboard();
             ad.Show();
             this.Hide();
@@ -101,6 +102,7 @@ namespace Final_Project
 
         private void label16_Click(object sender, EventArgs e)
         {
+            //employee
             Admin_Add_employees ad = new Admin_Add_employees();
             ad.Show();
             this.Hide();
@@ -108,6 +110,7 @@ namespace Final_Project
 
         private void label2_Click(object sender, EventArgs e)
         {
+            //customer
             AdminUpdateCustomer ad = new AdminUpdateCustomer();
             ad.Show();
             this.Hide();
@@ -115,6 +118,7 @@ namespace Final_Project
 
         private void label4_Click(object sender, EventArgs e)
         {
+            //product
             Admin_Add_Products ad = new Admin_Add_Products();
             ad.Show();
             this.Hide();
@@ -122,6 +126,7 @@ namespace Final_Project
 
         private void label3_Click(object sender, EventArgs e)
         {
+            //inventory
             Admin_view_Product_inventory admin = new Admin_view_Product_inventory();
             admin.Show();
             this.Hide();
@@ -129,6 +134,7 @@ namespace Final_Project
 
         private void label5_Click(object sender, EventArgs e)
         {
+            //purchase
             Admin_Purchase_Order admin = new Admin_Purchase_Order();
             admin.Show();
             this.Hide();
@@ -136,6 +142,7 @@ namespace Final_Project
 
         private void label6_Click(object sender, EventArgs e)
         {
+            //ssales
             Admin_View_Search_orders admin_View_Search_Orders = new Admin_View_Search_orders();
             admin_View_Search_Orders.Show();
             this.Hide();
@@ -143,6 +150,7 @@ namespace Final_Project
 
         private void label7_Click(object sender, EventArgs e)
         {
+            //salary
             AdminMakePaysheet admin_MakePaysheet = new AdminMakePaysheet();
             admin_MakePaysheet.Show();
             this.Hide();
@@ -150,6 +158,7 @@ namespace Final_Project
 
         private void button7_Click(object sender, EventArgs e)
         {
+            //supplier
             Admin_Add_Supplier sup = new Admin_Add_Supplier();
             sup.Show();
             this.Hide();

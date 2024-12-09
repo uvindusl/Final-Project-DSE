@@ -513,5 +513,82 @@ namespace Final_Project
                 e.Handled = true;
             }
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Admin_Dashboard ad = new Admin_Dashboard();
+            ad.Show();
+            this.Hide();
+        }
+
+        private void btnEmployeeForm_Click(object sender, EventArgs e)
+        {
+            Admin_Add_employees ad = new Admin_Add_employees();
+            ad.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AdminUpdateCustomer ad = new AdminUpdateCustomer();
+            ad.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Admin_View_Products_1 ad = new Admin_View_Products_1();
+            ad.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Admin_view_Product_inventory admin = new Admin_view_Product_inventory();
+            admin.Show();
+            this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Admin_Purchase_Order admin = new Admin_Purchase_Order();
+            admin.Show();
+            this.Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Admin_View_Search_orders admin_View_Search_Orders = new Admin_View_Search_orders();
+            admin_View_Search_Orders.Show();
+            this.Hide();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            AdminMakePaysheet admin_MakePaysheet = new AdminMakePaysheet();
+            admin_MakePaysheet.Show();
+            this.Hide();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Admin_Add_Supplier sup = new Admin_Add_Supplier();
+            sup.Show();
+            this.Hide();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            AdminUpdateHardware ad = new AdminUpdateHardware();
+            ad.Show();
+            this.Hide();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            AdminUpdateSoftware ad = new AdminUpdateSoftware();
+            ad.Show();
+            this.Hide();
+        }
     }
 }

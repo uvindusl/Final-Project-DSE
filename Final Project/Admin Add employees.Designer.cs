@@ -61,6 +61,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.txtSpecial = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button6 = new System.Windows.Forms.Button();
@@ -73,7 +74,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -250,6 +250,7 @@
             this.txtId.Location = new System.Drawing.Point(559, 25);
             this.txtId.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(160, 25);
             this.txtId.TabIndex = 70;
             // 
@@ -419,6 +420,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(345, 1000);
             this.panel1.TabIndex = 94;
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button9.Location = new System.Drawing.Point(129, 187);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(183, 66);
+            this.button9.TabIndex = 17;
+            this.button9.Text = "Dashboard";
+            this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button8
             // 
@@ -616,22 +633,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(126, 881);
             this.panel3.TabIndex = 97;
-            // 
-            // button9
-            // 
-            this.button9.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button9.Location = new System.Drawing.Point(129, 187);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(183, 66);
-            this.button9.TabIndex = 17;
-            this.button9.Text = "Dashboard";
-            this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.UseVisualStyleBackColor = false;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // Admin_Add_employees
             // 
