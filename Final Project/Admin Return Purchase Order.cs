@@ -669,5 +669,61 @@ namespace Final_Project
             inset_datainto_retunrinvoice();
             this.btnsavetodatabse.Enabled = true;
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            AdminUpdateEmployee aue = new AdminUpdateEmployee();
+            aue.Show();
+            this.Hide();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            AdminUpdateCustomer auc = new AdminUpdateCustomer();
+            auc.Show();
+            this.Hide();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            Admin_View_Products_1 avp = new Admin_View_Products_1();
+            avp.Show();
+            this.Hide();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            Admin_view_Product_inventory avpi = new Admin_view_Product_inventory();
+            avpi.Show();
+            this.Hide();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            Admin_View_Purchase_Order avpo = new Admin_View_Purchase_Order();
+            avpo.Show();
+            this.Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Admin_View_Search_orders avso = new Admin_View_Search_orders();
+            avso.Show();
+            this.Hide();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            AdminMakePaysheet amp = new AdminMakePaysheet();
+            amp.Show();
+            this.Hide();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            AdminUpdateSupplier aus = new AdminUpdateSupplier();
+            aus.Show();
+            this.Hide();
+        }
     }
 }

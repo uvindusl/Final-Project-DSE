@@ -93,5 +93,10 @@ namespace Final_Project
             //Disconnect
             con.Close();
         }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
