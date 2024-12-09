@@ -16,9 +16,9 @@ namespace Final_Project {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class yearly_sales_report : ReportClass {
+    public class yearly_sales_report1 : ReportClass {
         
-        public yearly_sales_report() {
+        public yearly_sales_report1() {
         }
         
         public override string ResourceName {
@@ -129,7 +129,7 @@ namespace Final_Project {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            yearly_sales_report rpt = new yearly_sales_report();
+            yearly_sales_report1 rpt = new yearly_sales_report1();
             rpt.Site = this.Site;
             return rpt;
         }
