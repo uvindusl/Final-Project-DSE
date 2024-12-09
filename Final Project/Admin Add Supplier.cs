@@ -25,7 +25,7 @@ namespace Final_Project
             {
                 //Create a connection
 
-                string cs = "Data Source = LAPTOP-DOH91PI2;Initial Catalog = DSE_FinalProject; Integrated Security = True ";
+                string cs = @"Data Source=HPNotebook; Initial Catalog=DSE_FinalProject; Integrated Security=True";
                 SqlConnection con = new SqlConnection(cs);
 
                 con.Open();
@@ -121,7 +121,7 @@ namespace Final_Project
                  {*/
                 //Create a connection
 
-                string cs = "Data Source = LAPTOP-DOH91PI2;Initial Catalog = DSE_FinalProject; Integrated Security = True ";
+                string cs = @"Data Source=HPNotebook; Initial Catalog=DSE_FinalProject; Integrated Security=True";
                 SqlConnection con = new SqlConnection(cs);
 
                 con.Open();
@@ -229,7 +229,23 @@ namespace Final_Project
 
         private void button7_Click(object sender, EventArgs e)
         {
-            
+           AdminUpdateSupplier sup = new AdminUpdateSupplier();
+            sup.Show();
+            this.Hide();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            AdminUpdateSupplier sup = new AdminUpdateSupplier();
+            sup.Show();
+            this.Hide();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Admin_Dashboard ad = new Admin_Dashboard();
+            ad.Show();
+            this.Hide();
         }
     }
 }

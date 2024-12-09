@@ -28,10 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // Admin_Dashboard
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Admin_Dashboard";
+            this.ClientSize = new System.Drawing.Size(1368, 780);
+            this.MaximumSize = new System.Drawing.Size(1920, 1000);
+            this.Name = "Admin_Dashboard";
+            this.Text = "Admin Dashboard";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
