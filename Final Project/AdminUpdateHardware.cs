@@ -129,6 +129,11 @@ namespace Final_Project
 
         }
 
+        private void BtnCustomerForm_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void loadDataToTable()
         {
             SqlConnection conn = connection();
