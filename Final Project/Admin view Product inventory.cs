@@ -164,7 +164,7 @@ namespace Final_Project
 
         private void button7_Click(object sender, EventArgs e)
         {
-            AdminUpdateSupplier sup = new AdminUpdateSupplier();
+            Admin_Add_Supplier sup = new Admin_Add_Supplier();
             sup.Show();
             this.Hide();
         }
