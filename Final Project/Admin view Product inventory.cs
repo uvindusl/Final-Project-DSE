@@ -98,5 +98,75 @@ namespace Final_Project
         {
 
         }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            Admin_Dashboard ad = new Admin_Dashboard();
+            ad.Show();
+            this.Hide();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Admin_Add_employees ad = new Admin_Add_employees();
+            ad.Show();
+            this.Hide();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            AdminUpdateCustomer ad = new AdminUpdateCustomer();
+            ad.Show();
+            this.Hide();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            Admin_Add_Products ad = new Admin_Add_Products();
+            ad.Show();
+            this.Hide();
+        }
+
+        private void btnalerts_Click(object sender, EventArgs e)
+        {
+            AdminSetConfigurableAlerts ad = new AdminSetConfigurableAlerts();
+            ad.Show();
+            this.Hide();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            Admin_view_Product_inventory admin = new Admin_view_Product_inventory();
+            admin.Show();
+            this.Hide();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            Admin_Purchase_Order admin = new Admin_Purchase_Order();
+            admin.Show();
+            this.Hide();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            Admin_View_Search_orders admin_View_Search_Orders = new Admin_View_Search_orders();
+            admin_View_Search_Orders.Show();
+            this.Hide();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            AdminMakePaysheet admin_MakePaysheet = new AdminMakePaysheet();
+            admin_MakePaysheet.Show();
+            this.Hide();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            AdminUpdateSupplier sup = new AdminUpdateSupplier();
+            sup.Show();
+            this.Hide();
+        }
     }
 }

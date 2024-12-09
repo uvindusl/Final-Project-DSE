@@ -539,14 +539,21 @@ namespace Final_Project
         {
             AdminUpdateEmployee adu = new AdminUpdateEmployee();
             adu.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             AdminUpdateEmployee adu = new AdminUpdateEmployee();
             adu.Show();
-            this.Close();
+            this.Hide();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Admin_Dashboard ad = new Admin_Dashboard();
+            ad.Show();
+            this.Hide();
         }
     }
 }
