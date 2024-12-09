@@ -653,27 +653,37 @@ namespace Final_Project
 
         private void label2_Click(object sender, EventArgs e)
         {
-
+            SalesPersonDashboard salesPersonDashboard = new SalesPersonDashboard();
+            salesPersonDashboard.Show();
+            this.Hide();
         }
 
         private void label7_Click(object sender, EventArgs e)
         {
-
+            Sales_Person_POS sales_Person_POS = new Sales_Person_POS();
+            sales_Person_POS.Show();
+            this.Hide();
         }
 
         private void label8_Click(object sender, EventArgs e)
         {
-
+            Sales_person_Add_customer sa = new Sales_person_Add_customer();
+            sa.Show();
+            this.Hide();
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-
+            Sales_Person_Quotation sa = new Sales_Person_Quotation();
+            sa.Show();
+            this.Hide();
         }
 
         private void label10_Click(object sender, EventArgs e)
         {
-
+            SP_View_Software_Pd sales_Person_ = new SP_View_Software_Pd();
+            sales_Person_.Show();
+            this.Hide();
         }
     }
 }

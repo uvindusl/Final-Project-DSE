@@ -198,6 +198,7 @@
             this.label10.Size = new System.Drawing.Size(108, 29);
             this.label10.TabIndex = 4;
             this.label10.Text = "Products";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label9
             // 
@@ -209,6 +210,7 @@
             this.label9.Size = new System.Drawing.Size(117, 29);
             this.label9.TabIndex = 3;
             this.label9.Text = "Quotation";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label8
             // 
@@ -220,6 +222,7 @@
             this.label8.Size = new System.Drawing.Size(117, 29);
             this.label8.TabIndex = 2;
             this.label8.Text = "Customer";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label7
             // 

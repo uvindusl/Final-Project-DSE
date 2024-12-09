@@ -195,5 +195,26 @@ namespace Final_Project
             sP_View_Software_Pd.Show();
             this.Hide();
         }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            Sales_Person_Quotation sales_Person_Quotation = new Sales_Person_Quotation();
+            sales_Person_Quotation.Show();
+            this.Hide();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            Sales_person_Add_customer cs = new Sales_person_Add_customer();
+            cs.Show();
+            this.Hide();
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+            SP_View_Software_Pd sa = new SP_View_Software_Pd();
+            sa.Show();
+            this.Hide();
+        }
     }
 }
