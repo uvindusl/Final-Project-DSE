@@ -175,86 +175,14 @@
     <Compile Include="Admin_Add_Products.Designer.cs">
       <DependentUpon>Admin_Add_Products.cs</DependentUpon>
     </Compile>
-    <Compile Include="CrystalReport1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="inventory report.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="inventory report.Designer.cs">
-      <DependentUpon>inventory report.cs</DependentUpon>
-    </Compile>
-    <Compile Include="inventory report1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>inventory report.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Invioce.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Invioce.Designer.cs">
-      <DependentUpon>Invioce.cs</DependentUpon>
-    </Compile>
-    <Compile Include="monthly sales report.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="monthly sales report.Designer.cs">
-      <DependentUpon>monthly sales report.cs</DependentUpon>
-    </Compile>
-    <Compile Include="monthly sales report1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>monthly sales report.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="product return Report.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="product return Report.Designer.cs">
-      <DependentUpon>product return Report.cs</DependentUpon>
-    </Compile>
-    <Compile Include="product return report1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>product return report.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Purchase Order Report.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Purchase Order Report.Designer.cs">
-      <DependentUpon>Purchase Order Report.cs</DependentUpon>
-    </Compile>
-    <Compile Include="purchase order report1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>purchase order report.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="quotation report.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>quotation report.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Qutation report.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Qutation report.Designer.cs">
-      <DependentUpon>Qutation report.cs</DependentUpon>
-    </Compile>
     <Compile Include="Sales person Add customer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -333,30 +261,6 @@
     <Compile Include="View Working Hours.Designer.cs">
       <DependentUpon>View Working Hours.cs</DependentUpon>
     </Compile>
-    <Compile Include="weekly sales report.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="weekly sales report.Designer.cs">
-      <DependentUpon>weekly sales report.cs</DependentUpon>
-    </Compile>
-    <Compile Include="weekly sales report1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>weekly sales report.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="yearly sales report.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="yearly sales report.Designer.cs">
-      <DependentUpon>yearly sales report.cs</DependentUpon>
-    </Compile>
-    <Compile Include="yearly sales report1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>yearly sales report.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <EmbeddedResource Include="Admin Add employees.resx">
       <DependentUpon>Admin Add employees.cs</DependentUpon>
     </EmbeddedResource>
@@ -420,24 +324,8 @@
     <EmbeddedResource Include="Admin_Add_Products.resx">
       <DependentUpon>Admin_Add_Products.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrystalReport1.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="inventory report.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>inventory report1.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="monthly sales report.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>monthly sales report1.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="product return report.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>product return report1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -449,14 +337,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="purchase order report.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>purchase order report1.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="quotation report.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>quotation report.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Sales person Add customer.resx">
       <DependentUpon>Sales person Add customer.cs</DependentUpon>
     </EmbeddedResource>
@@ -495,14 +375,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View Working Hours.resx">
       <DependentUpon>View Working Hours.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="weekly sales report.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>weekly sales report1.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="yearly sales report.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>yearly sales report1.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
