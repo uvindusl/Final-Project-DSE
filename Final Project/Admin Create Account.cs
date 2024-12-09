@@ -214,8 +214,8 @@ namespace Final_Project
             else
             {
 
-                /* try
-                 {*/
+                try
+                 {
                 //Create a connection
 
                 string cs = @"Data Source=HPNotebook; Initial Catalog=DSE_FinalProject; Integrated Security=True";
@@ -260,12 +260,16 @@ namespace Final_Project
                 con.Close();
 
 
-                /*}
+                }
                 catch (SqlException)
                 {
                     MessageBox.Show(" Something went wrong ", "Information");
-                }*/
+                }
             }
+
+            Login login = new Login();
+            login.Show();
+            this.Hide();    
         }
 
         private void Admin_Create_Account_Load(object sender, EventArgs e)

@@ -32,36 +32,79 @@ namespace Final_Project
 
         private void SalesPersonDashboard_Load(object sender, EventArgs e)
         {
-            double income, totalincome = 0;
-            int sales = 0;
-            DateTime dt = DateTime.Today;
-            this.usernameLBL.Text = this.username;
-            SqlConnection conn = connection();
-            conn.Open();
-            string query = "SELECT totalAmount FROM Order";
-            SqlCommand com = new SqlCommand(query, conn);
+            
 
             
         }
 
-        private SqlConnection connection()
+        private void button1_Click(object sender, EventArgs e)
         {
-            //This function will be used to establish a connection with Microsoft SQL server
-            string cs = @"Data Source=DESKTOP-MFN3B4M; Initial Catalog=DSE_FinalProject;Integrated Security=True";
-            SqlConnection conn = new SqlConnection(cs);
+            Sales_Person_POS sales_Person_POS = new Sales_Person_POS();
+            sales_Person_POS.Show();
+            this.Close();
+        }
 
-            try
-            {
+        private void label11_Click(object sender, EventArgs e)
+        {
+            SalesPersonDashboard salesPersonDashboard = new SalesPersonDashboard();
+            salesPersonDashboard.Show();
+            this.Close();
+        }
 
-                MessageBox.Show("Connection success");
-                return conn;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                return null;
-            }
-            return null;
+        private void label9_Click(object sender, EventArgs e)
+        {
+            Sales_Person_POS sales_Person_POS = new Sales_Person_POS();
+            sales_Person_POS.Show();
+            this.Close();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            Sales_person_Add_customer sales_Person_Add_Customer = new Sales_person_Add_customer();
+            sales_Person_Add_Customer.Show();
+            this.Close();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            Sales_Person_Quotation sales_Person_ = new Sales_Person_Quotation();
+            sales_Person_.Show();
+            this.Close();
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+            SP_View_Software_Pd sP_View_Software_Pd = new SP_View_Software_Pd();
+            sP_View_Software_Pd.Show();
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Sales_person_Add_customer sales_Person_Add_Customer = new Sales_person_Add_customer();
+            sales_Person_Add_Customer.Show();
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Sales_Person_Quotation sales_Person_ = new Sales_Person_Quotation();
+            sales_Person_.Show();
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SP_View_Software_Pd sales_Person_ = new SP_View_Software_Pd();
+            sales_Person_.Show();
+            this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Close();
         }
     }
 }

@@ -39,6 +39,7 @@
             this.txtproduct = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label16 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -48,7 +49,7 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(659, 202);
+            this.dataGridView1.Location = new System.Drawing.Point(659, 235);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -114,7 +115,7 @@
             // btnprint
             // 
             this.btnprint.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnprint.Location = new System.Drawing.Point(1544, 803);
+            this.btnprint.Location = new System.Drawing.Point(1571, 844);
             this.btnprint.Margin = new System.Windows.Forms.Padding(4);
             this.btnprint.Name = "btnprint";
             this.btnprint.Size = new System.Drawing.Size(108, 39);
@@ -125,7 +126,7 @@
             // btnreset
             // 
             this.btnreset.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnreset.Location = new System.Drawing.Point(1382, 129);
+            this.btnreset.Location = new System.Drawing.Point(1382, 162);
             this.btnreset.Margin = new System.Windows.Forms.Padding(4);
             this.btnreset.Name = "btnreset";
             this.btnreset.Size = new System.Drawing.Size(103, 32);
@@ -138,7 +139,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(751, 73);
+            this.label8.Location = new System.Drawing.Point(751, 106);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(190, 22);
@@ -148,7 +149,7 @@
             // txtproduct
             // 
             this.txtproduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtproduct.Location = new System.Drawing.Point(980, 70);
+            this.txtproduct.Location = new System.Drawing.Point(980, 103);
             this.txtproduct.Margin = new System.Windows.Forms.Padding(4);
             this.txtproduct.Name = "txtproduct";
             this.txtproduct.Size = new System.Drawing.Size(411, 28);
@@ -178,11 +179,23 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft YaHei", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(1099, 37);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(222, 25);
+            this.label16.TabIndex = 95;
+            this.label16.Text = "View Search Job Notes";
+            // 
             // Technician_View_search_Job_note
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1902, 953);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnprint);
@@ -215,5 +228,6 @@
         private System.Windows.Forms.TextBox txtproduct;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label16;
     }
 }

@@ -48,6 +48,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -58,6 +59,7 @@
             this.txtId.Enabled = false;
             this.txtId.Location = new System.Drawing.Point(290, 62);
             this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(278, 28);
             this.txtId.TabIndex = 42;
             // 
@@ -220,7 +222,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(205, 387);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(118, 36);
+            this.label7.Size = new System.Drawing.Size(94, 29);
             this.label7.TabIndex = 1;
             this.label7.Text = "Service";
             this.label7.Click += new System.EventHandler(this.label7_Click);
@@ -264,11 +266,23 @@
             this.panel3.Size = new System.Drawing.Size(173, 608);
             this.panel3.TabIndex = 76;
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft YaHei", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(1071, 39);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(184, 31);
+            this.label16.TabIndex = 95;
+            this.label16.Text = "Add Job Notes";
+            // 
             // Technician__Jobnotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1902, 953);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -284,6 +298,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -309,5 +324,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label16;
     }
 }

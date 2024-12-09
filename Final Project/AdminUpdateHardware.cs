@@ -107,18 +107,18 @@ namespace Final_Project
         private SqlConnection connection()
         {
             //This function will be used to establish a connection with Microsoft SQL server
-            string cs = @"Data Source=DESKTOP-MFN3B4M; Initial Catalog=DSE_FinalProject;Integrated Security=True";
+            string cs = @"Data Source=HPNotebook; Initial Catalog=DSE_FinalProject; Integrated Security=True";
             SqlConnection conn = new SqlConnection(cs);
 
             try
             {
 
-                MessageBox.Show("Connection success");
+                
                 return conn;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+               
                 return null;
             }
             return null;
