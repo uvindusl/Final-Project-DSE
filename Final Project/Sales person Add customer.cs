@@ -174,5 +174,26 @@ namespace Final_Project
         {
             idAutoincrement();
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            SalesPersonDashboard salesPersonDashboard = new SalesPersonDashboard();
+            salesPersonDashboard.Show();
+            this.Hide();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            Sales_Person_POS se = new Sales_Person_POS();
+            se.Show();
+            this.Hide();
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+            SP_View_Software_Pd sP_View_Software_Pd = new SP_View_Software_Pd();
+            sP_View_Software_Pd.Show();
+            this.Hide();
+        }
     }
 }

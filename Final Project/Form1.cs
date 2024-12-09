@@ -64,17 +64,23 @@ namespace Final_Project
                             if (usertype == "Admin")
                             {
                                 // open admin dashboard
-                                MessageBox.Show("Successful login as Admin");
+                                Admin_Dashboard ad = new Admin_Dashboard();
+                                ad.Show();
+                                this.Hide();
                             }
                             else if (usertype == "SalesPerson")
                             {
                                 // open salesperson dashboard
-                                MessageBox.Show("Successful login as SalesPerson");
+                                SalesPersonDashboard ad = new SalesPersonDashboard();
+                                ad.Show();
+                                this.Hide();
                             }
                             else if (usertype == "Technician")
                             {
                                 // open technician dashboard
-                                MessageBox.Show("Successful login as Technician");
+                                Technician_Dashboard ad = new Technician_Dashboard();
+                                ad.Show();
+                                this.Hide();
                             }
                             else
                             {

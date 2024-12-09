@@ -89,6 +89,7 @@
             this.label7.Size = new System.Drawing.Size(91, 31);
             this.label7.TabIndex = 8;
             this.label7.Text = "Salary";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label6
             // 
@@ -102,6 +103,7 @@
             this.label6.Size = new System.Drawing.Size(82, 31);
             this.label6.TabIndex = 7;
             this.label6.Text = "Sales";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -115,6 +117,7 @@
             this.label5.Size = new System.Drawing.Size(143, 31);
             this.label5.TabIndex = 6;
             this.label5.Text = "Purchases";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
@@ -128,6 +131,7 @@
             this.label4.Size = new System.Drawing.Size(122, 31);
             this.label4.TabIndex = 5;
             this.label4.Text = "Products";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -141,6 +145,7 @@
             this.label3.Size = new System.Drawing.Size(127, 31);
             this.label3.TabIndex = 4;
             this.label3.Text = "Inventory";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -154,6 +159,7 @@
             this.label2.Size = new System.Drawing.Size(132, 31);
             this.label2.TabIndex = 3;
             this.label2.Text = "Customer";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -167,6 +173,7 @@
             this.label1.Size = new System.Drawing.Size(148, 31);
             this.label1.TabIndex = 2;
             this.label1.Text = "Employees";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel2
             // 
@@ -215,7 +222,7 @@
             this.label8.Location = new System.Drawing.Point(745, 38);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(178, 20);
+            this.label8.Size = new System.Drawing.Size(142, 16);
             this.label8.TabIndex = 27;
             this.label8.Text = "Search by Job Note ID";
             // 
