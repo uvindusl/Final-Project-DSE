@@ -197,6 +197,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>inventory report.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Invioce.cs">
       <SubType>Form</SubType>
@@ -214,6 +215,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>monthly sales report.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="product return Report.cs">
       <SubType>Form</SubType>
@@ -341,6 +343,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>weekly sales report.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="yearly sales report.cs">
       <SubType>Form</SubType>
@@ -352,6 +355,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>yearly sales report.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="Admin Add employees.resx">
       <DependentUpon>Admin Add employees.cs</DependentUpon>
