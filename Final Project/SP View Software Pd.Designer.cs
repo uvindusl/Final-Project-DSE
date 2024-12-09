@@ -49,7 +49,7 @@
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(227, 59);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(783, 623);
@@ -89,6 +89,7 @@
             this.label10.Size = new System.Drawing.Size(108, 29);
             this.label10.TabIndex = 4;
             this.label10.Text = "Products";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label1
             // 
@@ -100,6 +101,7 @@
             this.label1.Size = new System.Drawing.Size(117, 29);
             this.label1.TabIndex = 3;
             this.label1.Text = "Quotation";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label8
             // 
@@ -111,6 +113,7 @@
             this.label8.Size = new System.Drawing.Size(117, 29);
             this.label8.TabIndex = 2;
             this.label8.Text = "Customer";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label7
             // 
@@ -122,6 +125,7 @@
             this.label7.Size = new System.Drawing.Size(64, 29);
             this.label7.TabIndex = 1;
             this.label7.Text = "POS";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label2
             // 
@@ -133,6 +137,7 @@
             this.label2.Size = new System.Drawing.Size(131, 29);
             this.label2.TabIndex = 0;
             this.label2.Text = "Dashboard";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // panel2
             // 
@@ -162,7 +167,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(1920, 1000);
             this.Name = "SP_View_Software_Pd";
             this.Text = "SP View Software Pd";

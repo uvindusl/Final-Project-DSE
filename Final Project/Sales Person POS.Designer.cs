@@ -76,7 +76,7 @@
             this.btnsavetodatabse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnsavetodatabse.ForeColor = System.Drawing.Color.White;
             this.btnsavetodatabse.Location = new System.Drawing.Point(889, 815);
-            this.btnsavetodatabse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnsavetodatabse.Margin = new System.Windows.Forms.Padding(4);
             this.btnsavetodatabse.Name = "btnsavetodatabse";
             this.btnsavetodatabse.Size = new System.Drawing.Size(127, 52);
             this.btnsavetodatabse.TabIndex = 60;
@@ -90,7 +90,7 @@
             this.btnclose.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnclose.ForeColor = System.Drawing.Color.White;
             this.btnclose.Location = new System.Drawing.Point(1061, 815);
-            this.btnclose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnclose.Margin = new System.Windows.Forms.Padding(4);
             this.btnclose.Name = "btnclose";
             this.btnclose.Size = new System.Drawing.Size(127, 52);
             this.btnclose.TabIndex = 59;
@@ -102,7 +102,7 @@
             // 
             this.txttotaldiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttotaldiscount.Location = new System.Drawing.Point(1474, 793);
-            this.txttotaldiscount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txttotaldiscount.Margin = new System.Windows.Forms.Padding(4);
             this.txttotaldiscount.Name = "txttotaldiscount";
             this.txttotaldiscount.ReadOnly = true;
             this.txttotaldiscount.Size = new System.Drawing.Size(389, 28);
@@ -125,7 +125,7 @@
             // 
             this.txttotalamount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttotalamount.Location = new System.Drawing.Point(1474, 857);
-            this.txttotalamount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txttotalamount.Margin = new System.Windows.Forms.Padding(4);
             this.txttotalamount.Name = "txttotalamount";
             this.txttotalamount.ReadOnly = true;
             this.txttotalamount.Size = new System.Drawing.Size(389, 28);
@@ -149,7 +149,7 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(1268, 29);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(596, 734);
@@ -179,7 +179,7 @@
             this.panel3.Controls.Add(this.label9);
             this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel3.Location = new System.Drawing.Point(503, 29);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(734, 734);
             this.panel3.TabIndex = 52;
@@ -187,7 +187,7 @@
             // txtdescription
             // 
             this.txtdescription.Location = new System.Drawing.Point(329, 102);
-            this.txtdescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtdescription.Margin = new System.Windows.Forms.Padding(4);
             this.txtdescription.Multiline = true;
             this.txtdescription.Name = "txtdescription";
             this.txtdescription.Size = new System.Drawing.Size(354, 99);
@@ -206,7 +206,7 @@
             // txtdiscount
             // 
             this.txtdiscount.Location = new System.Drawing.Point(329, 420);
-            this.txtdiscount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtdiscount.Margin = new System.Windows.Forms.Padding(4);
             this.txtdiscount.Name = "txtdiscount";
             this.txtdiscount.Size = new System.Drawing.Size(354, 28);
             this.txtdiscount.TabIndex = 42;
@@ -225,7 +225,7 @@
             // txtsubtotal
             // 
             this.txtsubtotal.Location = new System.Drawing.Point(329, 607);
-            this.txtsubtotal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtsubtotal.Margin = new System.Windows.Forms.Padding(4);
             this.txtsubtotal.Name = "txtsubtotal";
             this.txtsubtotal.ReadOnly = true;
             this.txtsubtotal.Size = new System.Drawing.Size(354, 28);
@@ -244,7 +244,7 @@
             // numaricqunatity
             // 
             this.numaricqunatity.Location = new System.Drawing.Point(329, 474);
-            this.numaricqunatity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numaricqunatity.Margin = new System.Windows.Forms.Padding(4);
             this.numaricqunatity.Name = "numaricqunatity";
             this.numaricqunatity.Size = new System.Drawing.Size(354, 28);
             this.numaricqunatity.TabIndex = 38;
@@ -255,7 +255,7 @@
             this.button1.BackColor = System.Drawing.Color.Black;
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(558, 665);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(125, 47);
             this.button1.TabIndex = 37;
@@ -267,7 +267,7 @@
             // 
             this.combocname.FormattingEnabled = true;
             this.combocname.Location = new System.Drawing.Point(333, 221);
-            this.combocname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.combocname.Margin = new System.Windows.Forms.Padding(4);
             this.combocname.Name = "combocname";
             this.combocname.Size = new System.Drawing.Size(350, 30);
             this.combocname.TabIndex = 36;
@@ -285,7 +285,7 @@
             // txtsubdicount
             // 
             this.txtsubdicount.Location = new System.Drawing.Point(329, 536);
-            this.txtsubdicount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtsubdicount.Margin = new System.Windows.Forms.Padding(4);
             this.txtsubdicount.Name = "txtsubdicount";
             this.txtsubdicount.ReadOnly = true;
             this.txtsubdicount.Size = new System.Drawing.Size(354, 28);
@@ -304,7 +304,7 @@
             // txtoid
             // 
             this.txtoid.Location = new System.Drawing.Point(333, 56);
-            this.txtoid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtoid.Margin = new System.Windows.Forms.Padding(4);
             this.txtoid.Name = "txtoid";
             this.txtoid.ReadOnly = true;
             this.txtoid.Size = new System.Drawing.Size(350, 28);
@@ -314,7 +314,7 @@
             // 
             this.comboproduct.FormattingEnabled = true;
             this.comboproduct.Location = new System.Drawing.Point(329, 290);
-            this.comboproduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboproduct.Margin = new System.Windows.Forms.Padding(4);
             this.comboproduct.Name = "comboproduct";
             this.comboproduct.Size = new System.Drawing.Size(354, 30);
             this.comboproduct.TabIndex = 31;
@@ -323,7 +323,7 @@
             // txtprice
             // 
             this.txtprice.Location = new System.Drawing.Point(329, 358);
-            this.txtprice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtprice.Margin = new System.Windows.Forms.Padding(4);
             this.txtprice.Name = "txtprice";
             this.txtprice.ReadOnly = true;
             this.txtprice.Size = new System.Drawing.Size(354, 28);
@@ -375,7 +375,7 @@
             this.btnprint.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnprint.ForeColor = System.Drawing.Color.White;
             this.btnprint.Location = new System.Drawing.Point(703, 815);
-            this.btnprint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnprint.Margin = new System.Windows.Forms.Padding(4);
             this.btnprint.Name = "btnprint";
             this.btnprint.Size = new System.Drawing.Size(127, 52);
             this.btnprint.TabIndex = 17;
@@ -417,6 +417,7 @@
             this.label10.Size = new System.Drawing.Size(108, 29);
             this.label10.TabIndex = 4;
             this.label10.Text = "Products";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label1
             // 
@@ -428,6 +429,7 @@
             this.label1.Size = new System.Drawing.Size(117, 29);
             this.label1.TabIndex = 3;
             this.label1.Text = "Quotation";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label8
             // 
@@ -439,6 +441,7 @@
             this.label8.Size = new System.Drawing.Size(117, 29);
             this.label8.TabIndex = 2;
             this.label8.Text = "Customer";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label7
             // 
@@ -450,6 +453,7 @@
             this.label7.Size = new System.Drawing.Size(64, 29);
             this.label7.TabIndex = 1;
             this.label7.Text = "POS";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label2
             // 
@@ -461,12 +465,13 @@
             this.label2.Size = new System.Drawing.Size(131, 29);
             this.label2.TabIndex = 0;
             this.label2.Text = "Dashboard";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Sales_Person_POS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2382, 1203);
+            this.ClientSize = new System.Drawing.Size(1902, 953);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnsavetodatabse);
             this.Controls.Add(this.btnclose);
@@ -477,7 +482,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.btnprint);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(1920, 1000);
             this.Name = "Sales_Person_POS";
             this.Text = "Sales Person POS";

@@ -122,7 +122,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(85, 149);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(133, 28);
+            this.label2.Size = new System.Drawing.Size(106, 22);
             this.label2.TabIndex = 44;
             this.label2.Text = "Customer id";
             // 
@@ -199,6 +199,7 @@
             this.label10.Size = new System.Drawing.Size(108, 29);
             this.label10.TabIndex = 4;
             this.label10.Text = "Products";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label8
             // 
@@ -210,6 +211,7 @@
             this.label8.Size = new System.Drawing.Size(117, 29);
             this.label8.TabIndex = 2;
             this.label8.Text = "Customer";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label7
             // 
@@ -218,9 +220,10 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(205, 387);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(111, 36);
+            this.label7.Size = new System.Drawing.Size(89, 29);
             this.label7.TabIndex = 1;
             this.label7.Text = "Invoice";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label9
             // 
@@ -232,6 +235,7 @@
             this.label9.Size = new System.Drawing.Size(131, 29);
             this.label9.TabIndex = 0;
             this.label9.Text = "Dashboard";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // panel2
             // 
