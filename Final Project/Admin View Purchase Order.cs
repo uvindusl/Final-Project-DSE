@@ -92,5 +92,61 @@ namespace Final_Project
 
             con.Close();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Admin_Dashboard ad = new Admin_Dashboard();
+            ad.Show();
+            this.Hide();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            AdminUpdateCustomer aduc = new AdminUpdateCustomer();
+            aduc.Show();
+            this.Hide();
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+            Admin_Add_Products adap = new Admin_Add_Products();
+            adap.Show();
+            this.Hide();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            Admin_Add_Products adap = new Admin_Add_Products();
+            adap.Show();
+            this.Hide();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            Admin_view_Product_inventory admin = new Admin_view_Product_inventory();
+            admin.Show();
+            this.Hide();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            Admin_Purchase_Order admin = new Admin_Purchase_Order();
+            admin.Show();
+            this.Hide();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            AdminMakePaysheet admin_MakePaysheet = new AdminMakePaysheet();
+            admin_MakePaysheet.Show();
+            this.Hide();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Admin_Add_Supplier sup = new Admin_Add_Supplier();
+            sup.Show();
+            this.Hide();
+        }
     }
 }

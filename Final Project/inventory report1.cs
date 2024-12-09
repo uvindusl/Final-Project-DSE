@@ -16,9 +16,9 @@ namespace Final_Project {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class inventory_report1 : ReportClass {
+    public class inventory_report : ReportClass {
         
-        public inventory_report1() {
+        public inventory_report() {
         }
         
         public override string ResourceName {
@@ -129,7 +129,7 @@ namespace Final_Project {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            inventory_report1 rpt = new inventory_report1();
+            inventory_report rpt = new inventory_report();
             rpt.Site = this.Site;
             return rpt;
         }

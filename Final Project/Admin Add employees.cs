@@ -534,5 +534,26 @@ namespace Final_Project
             ads.Show();
             this.Hide();
         }
+
+        private void btnEmployeeForm_Click(object sender, EventArgs e)
+        {
+            AdminUpdateEmployee adu = new AdminUpdateEmployee();
+            adu.Show();
+            this.Hide();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            AdminUpdateEmployee adu = new AdminUpdateEmployee();
+            adu.Show();
+            this.Hide();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Admin_Dashboard ad = new Admin_Dashboard();
+            ad.Show();
+            this.Hide();
+        }
     }
 }

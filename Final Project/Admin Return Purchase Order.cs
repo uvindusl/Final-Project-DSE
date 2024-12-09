@@ -725,5 +725,12 @@ namespace Final_Project
             aus.Show();
             this.Hide();
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            Admin_Dashboard ad = new Admin_Dashboard();
+            ad.Show();
+            this.Hide();
+        }
     }
 }
