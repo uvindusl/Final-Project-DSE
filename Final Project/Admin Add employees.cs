@@ -146,7 +146,7 @@ namespace Final_Project
                 {
                     con.Open();
 
-                    string sql1 = "SELECT MAX(softwareProductId) FROM SoftwareProduct";
+                    string sql1 = "SELECT MAX(sPersonId) FROM Salesperson";
                     using (SqlCommand cmd = new SqlCommand(sql1, con))
                     {
                         SqlDataReader dr = cmd.ExecuteReader();
@@ -357,8 +357,8 @@ namespace Final_Project
             else
             {
 
-                /* try
-                 {*/
+                 try
+                 {
                 //Create a connection
 
                 string cs = @"Data Source=HPNotebook; Initial Catalog=DSE_FinalProject; Integrated Security=True";
@@ -445,7 +445,7 @@ namespace Final_Project
                 this.txtPassword.Text = "";
                 this.txtSalary.Text = "";
                 this.txtSpecial.Text = "";
-
+                    this.lblid.Text = "Id";
                 this.txtSpecial.Enabled = false;
 
                 EmpIdAutoIncrement();
@@ -454,11 +454,11 @@ namespace Final_Project
                 con.Close();
 
 
-                /*}
+                }
                 catch (SqlException)
                 {
                     MessageBox.Show(" Something went wrong ", "Information");
-                }*/
+                }
             }
         }
 
@@ -554,6 +554,11 @@ namespace Final_Project
             Admin_Dashboard ad = new Admin_Dashboard();
             ad.Show();
             this.Hide();
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
