@@ -63,6 +63,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnEmployeeForm = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -95,7 +96,7 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(404, 174);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(678, 591);
             this.panel2.TabIndex = 3;
@@ -104,7 +105,7 @@
             // 
             this.sellingpricetxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sellingpricetxt.Location = new System.Drawing.Point(343, 486);
-            this.sellingpricetxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sellingpricetxt.Margin = new System.Windows.Forms.Padding(2);
             this.sellingpricetxt.Name = "sellingpricetxt";
             this.sellingpricetxt.Size = new System.Drawing.Size(261, 28);
             this.sellingpricetxt.TabIndex = 23;
@@ -124,7 +125,7 @@
             // 
             this.pricetxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pricetxt.Location = new System.Drawing.Point(343, 431);
-            this.pricetxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pricetxt.Margin = new System.Windows.Forms.Padding(2);
             this.pricetxt.Name = "pricetxt";
             this.pricetxt.Size = new System.Drawing.Size(261, 28);
             this.pricetxt.TabIndex = 21;
@@ -144,7 +145,7 @@
             // 
             this.platformtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.platformtxt.Location = new System.Drawing.Point(345, 386);
-            this.platformtxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.platformtxt.Margin = new System.Windows.Forms.Padding(2);
             this.platformtxt.Name = "platformtxt";
             this.platformtxt.Size = new System.Drawing.Size(261, 28);
             this.platformtxt.TabIndex = 19;
@@ -179,9 +180,9 @@
             this.label7.Location = new System.Drawing.Point(60, 25);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(177, 22);
+            this.label7.Size = new System.Drawing.Size(213, 28);
             this.label7.TabIndex = 16;
-            this.label7.Text = "Hardware Product ID";
+            this.label7.Text = "Software Product ID";
             // 
             // deletebtn
             // 
@@ -191,7 +192,7 @@
             this.deletebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deletebtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.deletebtn.Location = new System.Drawing.Point(420, 537);
-            this.deletebtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.deletebtn.Margin = new System.Windows.Forms.Padding(2);
             this.deletebtn.Name = "deletebtn";
             this.deletebtn.Size = new System.Drawing.Size(102, 42);
             this.deletebtn.TabIndex = 15;
@@ -207,7 +208,7 @@
             this.updatebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updatebtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.updatebtn.Location = new System.Drawing.Point(540, 537);
-            this.updatebtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.updatebtn.Margin = new System.Windows.Forms.Padding(2);
             this.updatebtn.Name = "updatebtn";
             this.updatebtn.Size = new System.Drawing.Size(102, 42);
             this.updatebtn.TabIndex = 14;
@@ -220,7 +221,7 @@
             this.SPcmb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SPcmb.FormattingEnabled = true;
             this.SPcmb.Location = new System.Drawing.Point(344, 69);
-            this.SPcmb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SPcmb.Margin = new System.Windows.Forms.Padding(2);
             this.SPcmb.Name = "SPcmb";
             this.SPcmb.Size = new System.Drawing.Size(260, 30);
             this.SPcmb.TabIndex = 11;
@@ -230,7 +231,7 @@
             // 
             this.versiontxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.versiontxt.Location = new System.Drawing.Point(343, 342);
-            this.versiontxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.versiontxt.Margin = new System.Windows.Forms.Padding(2);
             this.versiontxt.Name = "versiontxt";
             this.versiontxt.Size = new System.Drawing.Size(261, 28);
             this.versiontxt.TabIndex = 10;
@@ -239,7 +240,7 @@
             // 
             this.licencetypetxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.licencetypetxt.Location = new System.Drawing.Point(343, 291);
-            this.licencetypetxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.licencetypetxt.Margin = new System.Windows.Forms.Padding(2);
             this.licencetypetxt.Name = "licencetypetxt";
             this.licencetypetxt.Size = new System.Drawing.Size(261, 28);
             this.licencetypetxt.TabIndex = 9;
@@ -248,7 +249,7 @@
             // 
             this.filesizetxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.filesizetxt.Location = new System.Drawing.Point(343, 247);
-            this.filesizetxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.filesizetxt.Margin = new System.Windows.Forms.Padding(2);
             this.filesizetxt.Name = "filesizetxt";
             this.filesizetxt.Size = new System.Drawing.Size(261, 28);
             this.filesizetxt.TabIndex = 8;
@@ -257,7 +258,7 @@
             // 
             this.descriptxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descriptxt.Location = new System.Drawing.Point(343, 113);
-            this.descriptxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.descriptxt.Margin = new System.Windows.Forms.Padding(2);
             this.descriptxt.Multiline = true;
             this.descriptxt.Name = "descriptxt";
             this.descriptxt.Size = new System.Drawing.Size(262, 78);
@@ -267,7 +268,7 @@
             // 
             this.subscriptiontxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subscriptiontxt.Location = new System.Drawing.Point(344, 204);
-            this.subscriptiontxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.subscriptiontxt.Margin = new System.Windows.Forms.Padding(2);
             this.subscriptiontxt.Name = "subscriptiontxt";
             this.subscriptiontxt.Size = new System.Drawing.Size(261, 28);
             this.subscriptiontxt.TabIndex = 6;
@@ -343,7 +344,7 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(1108, 174);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 82;
             this.dataGridView1.RowTemplate.Height = 33;
@@ -531,15 +532,27 @@
             this.btnEmployeeForm.UseVisualStyleBackColor = false;
             this.btnEmployeeForm.Click += new System.EventHandler(this.btnEmployeeForm_Click);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(987, 72);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(333, 36);
+            this.label11.TabIndex = 97;
+            this.label11.Text = "Admin Update Software";
+            // 
             // AdminUpdateSoftware
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1902, 953);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(1920, 1000);
             this.Name = "AdminUpdateSoftware";
             this.Text = "AdminUpdateSoftware";
@@ -550,6 +563,7 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -589,5 +603,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnEmployeeForm;
+        private System.Windows.Forms.Label label11;
     }
 }

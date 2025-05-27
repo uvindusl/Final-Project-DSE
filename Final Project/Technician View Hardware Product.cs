@@ -62,6 +62,34 @@ namespace Final_Project
         {
 
         }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            Technician_Dashboard technician_Dashboard = new Technician_Dashboard();
+            technician_Dashboard.Show();
+            this.Hide();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            Technician_Software technician_Software = new Technician_Software();
+            technician_Software.Show();
+            this.Hide();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            Technician_Add_Customer technician_Add_ = new Technician_Add_Customer();
+            technician_Add_.Show();
+            this.Hide();
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+            Technician_View_Hardware_Product technician_View_Hardware_ = new Technician_View_Hardware_Product();
+            technician_View_Hardware_.Show();
+            this.Hide();
+        }
     }
     
 }

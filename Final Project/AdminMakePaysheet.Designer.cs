@@ -62,6 +62,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnEmployeeForm = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -92,7 +93,7 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(628, 160);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(973, 703);
             this.panel2.TabIndex = 4;
@@ -106,7 +107,7 @@
             this.Proceedbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Proceedbtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.Proceedbtn.Location = new System.Drawing.Point(826, 623);
-            this.Proceedbtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Proceedbtn.Margin = new System.Windows.Forms.Padding(2);
             this.Proceedbtn.Name = "Proceedbtn";
             this.Proceedbtn.Size = new System.Drawing.Size(102, 44);
             this.Proceedbtn.TabIndex = 7;
@@ -119,7 +120,7 @@
             this.ENcmb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ENcmb.FormattingEnabled = true;
             this.ENcmb.Location = new System.Drawing.Point(435, 90);
-            this.ENcmb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ENcmb.Margin = new System.Windows.Forms.Padding(2);
             this.ENcmb.Name = "ENcmb";
             this.ENcmb.Size = new System.Drawing.Size(213, 30);
             this.ENcmb.TabIndex = 20;
@@ -129,7 +130,7 @@
             // 
             this.Bonustxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bonustxt.Location = new System.Drawing.Point(673, 495);
-            this.Bonustxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Bonustxt.Margin = new System.Windows.Forms.Padding(2);
             this.Bonustxt.Name = "Bonustxt";
             this.Bonustxt.Size = new System.Drawing.Size(169, 28);
             this.Bonustxt.TabIndex = 19;
@@ -210,7 +211,7 @@
             // 
             this.Basicsalarytxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Basicsalarytxt.Location = new System.Drawing.Point(436, 154);
-            this.Basicsalarytxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Basicsalarytxt.Margin = new System.Windows.Forms.Padding(2);
             this.Basicsalarytxt.Name = "Basicsalarytxt";
             this.Basicsalarytxt.Size = new System.Drawing.Size(266, 28);
             this.Basicsalarytxt.TabIndex = 12;
@@ -219,7 +220,7 @@
             // 
             this.EIDtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EIDtxt.Location = new System.Drawing.Point(435, 38);
-            this.EIDtxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EIDtxt.Margin = new System.Windows.Forms.Padding(2);
             this.EIDtxt.Name = "EIDtxt";
             this.EIDtxt.Size = new System.Drawing.Size(266, 28);
             this.EIDtxt.TabIndex = 10;
@@ -527,15 +528,27 @@
             this.btnEmployeeForm.UseVisualStyleBackColor = false;
             this.btnEmployeeForm.Click += new System.EventHandler(this.btnEmployeeForm_Click_1);
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft YaHei", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(1024, 55);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(152, 25);
+            this.label16.TabIndex = 97;
+            this.label16.Text = "Make Paysheet";
+            // 
             // AdminMakePaysheet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1902, 953);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.paysheetidLBL);
             this.Controls.Add(this.panel2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(1920, 1000);
             this.Name = "AdminMakePaysheet";
             this.Text = "AdminMakePaysheet";
@@ -584,5 +597,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnEmployeeForm;
+        private System.Windows.Forms.Label label16;
     }
 }

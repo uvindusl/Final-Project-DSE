@@ -25,7 +25,7 @@ namespace Final_Project
             {
                 //Create a connection
 
-                string cs = "Data Source = LAPTOP-DOH91PI2;Initial Catalog = DSE_FinalProject; Integrated Security = True ";
+                string cs = @"Data Source=HPNotebook; Initial Catalog=DSE_FinalProject; Integrated Security=True";
                 SqlConnection con = new SqlConnection(cs);
 
                 con.Open();
@@ -121,7 +121,7 @@ namespace Final_Project
                  {*/
                 //Create a connection
 
-                string cs = "Data Source = LAPTOP-DOH91PI2;Initial Catalog = DSE_FinalProject; Integrated Security = True ";
+                string cs = @"Data Source=HPNotebook; Initial Catalog=DSE_FinalProject; Integrated Security=True";
                 SqlConnection con = new SqlConnection(cs);
 
                 con.Open();
@@ -176,6 +176,34 @@ namespace Final_Project
         {
 
             idAutoincrement();
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            Technician_Dashboard technician_Dashboard = new Technician_Dashboard();
+            technician_Dashboard.Show();
+            this.Hide();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            Technician_Software technician_Software = new Technician_Software();
+            technician_Software.Show();
+            this.Hide();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            Technician_Add_Customer technician_ = new Technician_Add_Customer();
+            technician_.Show();
+            this.Hide();
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+            Technician_View_Hardware_Product technician_View_Hardware_ = new Technician_View_Hardware_Product();
+            technician_View_Hardware_.Show();
+            this.Hide();
         }
     }
 }

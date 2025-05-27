@@ -46,6 +46,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -77,7 +78,7 @@
             // btnreset
             // 
             this.btnreset.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnreset.Location = new System.Drawing.Point(1371, 91);
+            this.btnreset.Location = new System.Drawing.Point(1372, 112);
             this.btnreset.Margin = new System.Windows.Forms.Padding(4);
             this.btnreset.Name = "btnreset";
             this.btnreset.Size = new System.Drawing.Size(125, 35);
@@ -90,7 +91,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(755, 49);
+            this.label8.Location = new System.Drawing.Point(763, 66);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(178, 22);
@@ -100,7 +101,7 @@
             // txtproduct
             // 
             this.txtproduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtproduct.Location = new System.Drawing.Point(966, 46);
+            this.txtproduct.Location = new System.Drawing.Point(974, 63);
             this.txtproduct.Margin = new System.Windows.Forms.Padding(4);
             this.txtproduct.Name = "txtproduct";
             this.txtproduct.Size = new System.Drawing.Size(411, 28);
@@ -120,7 +121,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Location = new System.Drawing.Point(612, 160);
+            this.panel2.Location = new System.Drawing.Point(613, 181);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1089, 664);
             this.panel2.TabIndex = 99;
@@ -280,11 +281,23 @@
             this.label3.Text = "Inventory";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft YaHei", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(1058, 26);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(136, 25);
+            this.label16.TabIndex = 102;
+            this.label16.Text = "View Services";
+            // 
             // Admin_view_service
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1902, 953);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnprint);
@@ -326,5 +339,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label16;
     }
 }

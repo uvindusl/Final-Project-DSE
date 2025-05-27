@@ -117,8 +117,8 @@ namespace Final_Project
             else
             {
 
-                /* try
-                 {*/
+                try
+                 {
                 //Create a connection
 
                 string cs = @"Data Source=HPNotebook; Initial Catalog=DSE_FinalProject; Integrated Security=True";
@@ -154,11 +154,11 @@ namespace Final_Project
                 txtAdd.Text = "";
                 txtEmail.Text = "";
 
-                /*}
+                }
                 catch (SqlException)
                 {
                     MessageBox.Show(" Something went wrong ", "Information");
-                }*/
+                }
             }
         }
 
@@ -229,7 +229,7 @@ namespace Final_Project
 
         private void button7_Click(object sender, EventArgs e)
         {
-           AdminUpdateSupplier sup = new AdminUpdateSupplier();
+            Admin_Add_Supplier sup = new Admin_Add_Supplier();
             sup.Show();
             this.Hide();
         }
