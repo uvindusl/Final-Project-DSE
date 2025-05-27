@@ -72,6 +72,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.btnEmployeeForm = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -85,7 +86,7 @@
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button4.Location = new System.Drawing.Point(1088, 828);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(96, 45);
             this.button4.TabIndex = 1;
@@ -125,7 +126,7 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(466, 111);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(738, 681);
             this.panel2.TabIndex = 2;
@@ -135,7 +136,7 @@
             this.EmpNamecmb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmpNamecmb.FormattingEnabled = true;
             this.EmpNamecmb.Location = new System.Drawing.Point(332, 77);
-            this.EmpNamecmb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EmpNamecmb.Margin = new System.Windows.Forms.Padding(2);
             this.EmpNamecmb.Name = "EmpNamecmb";
             this.EmpNamecmb.Size = new System.Drawing.Size(339, 30);
             this.EmpNamecmb.TabIndex = 14;
@@ -145,7 +146,7 @@
             // 
             this.EID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EID.Location = new System.Drawing.Point(332, 33);
-            this.EID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EID.Margin = new System.Windows.Forms.Padding(2);
             this.EID.Name = "EID";
             this.EID.Size = new System.Drawing.Size(339, 28);
             this.EID.TabIndex = 29;
@@ -170,7 +171,7 @@
             "Technician",
             "Admin"});
             this.EmpTypecmb.Location = new System.Drawing.Point(332, 412);
-            this.EmpTypecmb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EmpTypecmb.Margin = new System.Windows.Forms.Padding(2);
             this.EmpTypecmb.Name = "EmpTypecmb";
             this.EmpTypecmb.Size = new System.Drawing.Size(339, 30);
             this.EmpTypecmb.TabIndex = 27;
@@ -182,7 +183,7 @@
             this.Updatebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Updatebtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.Updatebtn.Location = new System.Drawing.Point(575, 619);
-            this.Updatebtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Updatebtn.Margin = new System.Windows.Forms.Padding(2);
             this.Updatebtn.Name = "Updatebtn";
             this.Updatebtn.Size = new System.Drawing.Size(127, 47);
             this.Updatebtn.TabIndex = 26;
@@ -197,7 +198,7 @@
             this.Deletebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Deletebtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.Deletebtn.Location = new System.Drawing.Point(411, 619);
-            this.Deletebtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Deletebtn.Margin = new System.Windows.Forms.Padding(2);
             this.Deletebtn.Name = "Deletebtn";
             this.Deletebtn.Size = new System.Drawing.Size(127, 47);
             this.Deletebtn.TabIndex = 25;
@@ -209,7 +210,7 @@
             // 
             this.Passwordtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Passwordtxt.Location = new System.Drawing.Point(332, 554);
-            this.Passwordtxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Passwordtxt.Margin = new System.Windows.Forms.Padding(2);
             this.Passwordtxt.Name = "Passwordtxt";
             this.Passwordtxt.Size = new System.Drawing.Size(339, 28);
             this.Passwordtxt.TabIndex = 24;
@@ -218,7 +219,7 @@
             // 
             this.Usernametxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Usernametxt.Location = new System.Drawing.Point(332, 516);
-            this.Usernametxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Usernametxt.Margin = new System.Windows.Forms.Padding(2);
             this.Usernametxt.Name = "Usernametxt";
             this.Usernametxt.Size = new System.Drawing.Size(339, 28);
             this.Usernametxt.TabIndex = 23;
@@ -227,7 +228,7 @@
             // 
             this.BasicSalarytxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BasicSalarytxt.Location = new System.Drawing.Point(332, 461);
-            this.BasicSalarytxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BasicSalarytxt.Margin = new System.Windows.Forms.Padding(2);
             this.BasicSalarytxt.Name = "BasicSalarytxt";
             this.BasicSalarytxt.Size = new System.Drawing.Size(339, 28);
             this.BasicSalarytxt.TabIndex = 22;
@@ -237,7 +238,7 @@
             // 
             this.Citytxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Citytxt.Location = new System.Drawing.Point(331, 375);
-            this.Citytxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Citytxt.Margin = new System.Windows.Forms.Padding(2);
             this.Citytxt.Name = "Citytxt";
             this.Citytxt.Size = new System.Drawing.Size(301, 28);
             this.Citytxt.TabIndex = 20;
@@ -246,7 +247,7 @@
             // 
             this.StreetNotxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StreetNotxt.Location = new System.Drawing.Point(331, 336);
-            this.StreetNotxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.StreetNotxt.Margin = new System.Windows.Forms.Padding(2);
             this.StreetNotxt.Name = "StreetNotxt";
             this.StreetNotxt.Size = new System.Drawing.Size(301, 28);
             this.StreetNotxt.TabIndex = 19;
@@ -255,7 +256,7 @@
             // 
             this.HouseNotxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HouseNotxt.Location = new System.Drawing.Point(331, 298);
-            this.HouseNotxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.HouseNotxt.Margin = new System.Windows.Forms.Padding(2);
             this.HouseNotxt.Name = "HouseNotxt";
             this.HouseNotxt.Size = new System.Drawing.Size(301, 28);
             this.HouseNotxt.TabIndex = 18;
@@ -264,7 +265,7 @@
             // 
             this.EmContactNotxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmContactNotxt.Location = new System.Drawing.Point(332, 243);
-            this.EmContactNotxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EmContactNotxt.Margin = new System.Windows.Forms.Padding(2);
             this.EmContactNotxt.Name = "EmContactNotxt";
             this.EmContactNotxt.Size = new System.Drawing.Size(339, 28);
             this.EmContactNotxt.TabIndex = 17;
@@ -274,7 +275,7 @@
             // 
             this.Emailtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Emailtxt.Location = new System.Drawing.Point(332, 192);
-            this.Emailtxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Emailtxt.Margin = new System.Windows.Forms.Padding(2);
             this.Emailtxt.Name = "Emailtxt";
             this.Emailtxt.Size = new System.Drawing.Size(339, 28);
             this.Emailtxt.TabIndex = 16;
@@ -283,7 +284,7 @@
             // 
             this.ContactNotxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ContactNotxt.Location = new System.Drawing.Point(332, 151);
-            this.ContactNotxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ContactNotxt.Margin = new System.Windows.Forms.Padding(2);
             this.ContactNotxt.Name = "ContactNotxt";
             this.ContactNotxt.Size = new System.Drawing.Size(339, 28);
             this.ContactNotxt.TabIndex = 15;
@@ -293,7 +294,7 @@
             // 
             this.Agetxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Agetxt.Location = new System.Drawing.Point(332, 114);
-            this.Agetxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Agetxt.Margin = new System.Windows.Forms.Padding(2);
             this.Agetxt.Name = "Agetxt";
             this.Agetxt.Size = new System.Drawing.Size(339, 28);
             this.Agetxt.TabIndex = 14;
@@ -446,7 +447,7 @@
             // 
             this.EmpNametxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmpNametxt.Location = new System.Drawing.Point(666, 828);
-            this.EmpNametxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EmpNametxt.Margin = new System.Windows.Forms.Padding(2);
             this.EmpNametxt.Name = "EmpNametxt";
             this.EmpNametxt.Size = new System.Drawing.Size(21, 24);
             this.EmpNametxt.TabIndex = 13;
@@ -457,7 +458,7 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(1225, 111);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 82;
             this.dataGridView1.RowTemplate.Height = 33;
@@ -645,17 +646,29 @@
             this.btnEmployeeForm.UseVisualStyleBackColor = false;
             this.btnEmployeeForm.Click += new System.EventHandler(this.btnEmployeeForm_Click);
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft YaHei", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(1131, 30);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(181, 25);
+            this.label16.TabIndex = 97;
+            this.label16.Text = "Update Employess";
+            // 
             // AdminUpdateEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1902, 953);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.EmpNametxt);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(1920, 1000);
             this.Name = "AdminUpdateEmployee";
             this.Text = "AdminUpdateEmployee";
@@ -715,5 +728,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button btnEmployeeForm;
+        private System.Windows.Forms.Label label16;
     }
 }

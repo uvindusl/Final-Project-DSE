@@ -45,6 +45,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnEmployeeForm = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -56,7 +57,7 @@
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(45, 35);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(982, 436);
@@ -66,7 +67,7 @@
             // 
             this.btnprint.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnprint.Location = new System.Drawing.Point(1709, 848);
-            this.btnprint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnprint.Margin = new System.Windows.Forms.Padding(4);
             this.btnprint.Name = "btnprint";
             this.btnprint.Size = new System.Drawing.Size(97, 44);
             this.btnprint.TabIndex = 17;
@@ -77,7 +78,7 @@
             // 
             this.btnreset.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnreset.Location = new System.Drawing.Point(1258, 201);
-            this.btnreset.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnreset.Margin = new System.Windows.Forms.Padding(4);
             this.btnreset.Name = "btnreset";
             this.btnreset.Size = new System.Drawing.Size(98, 35);
             this.btnreset.TabIndex = 15;
@@ -100,7 +101,7 @@
             // 
             this.txtproduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtproduct.Location = new System.Drawing.Point(943, 143);
-            this.txtproduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtproduct.Margin = new System.Windows.Forms.Padding(4);
             this.txtproduct.Name = "txtproduct";
             this.txtproduct.Size = new System.Drawing.Size(329, 28);
             this.txtproduct.TabIndex = 13;
@@ -287,11 +288,23 @@
             this.panel2.Size = new System.Drawing.Size(1081, 518);
             this.panel2.TabIndex = 96;
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft YaHei", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(1002, 45);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(123, 25);
+            this.label16.TabIndex = 97;
+            this.label16.Text = "View Orders";
+            // 
             // Admin_View_Search_orders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1902, 953);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnprint);
@@ -330,5 +343,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnEmployeeForm;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label16;
     }
 }

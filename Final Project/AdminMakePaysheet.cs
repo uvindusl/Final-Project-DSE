@@ -326,12 +326,12 @@ namespace Final_Project
             try
             {
 
-                MessageBox.Show("Connection success");
+                
                 return conn;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                
                 return null;
             }
             return null;
